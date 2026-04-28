@@ -1,7 +1,6 @@
-# 🚀 Trae Solo CN 快速 Vibe-Coding 工作流
+# 🚀 Vibe-Coding 快速启动器
 
-> 本项目已针对 Trae Solo CN 优化，专为已有明确需求的项目设计。
-> **跳过市场调研，直接从需求到代码！**
+> 适用于 Trae Solo CN 的 Vibe-Coding 工作流入口文件。
 
 ## 快速开始
 
@@ -19,13 +18,13 @@
 💡 需求 ──► 📋 PRD ──► 🏗️ 技术设计 ──► 🤖 Agent配置 ──► 🚀 构建
 ```
 
-| 阶段 | 说明 | 时间 |
+| 阶段 | 时间 | 说明 |
 |------|------|------|
-| 需求 | 你描述功能，AI整理 | 5分钟 |
-| PRD | 明确功能范围和优先级 | 5分钟 |
-| 技术设计 | 确定技术栈和架构 | 5分钟 |
-| Agent配置 | 生成编码指令 | 1分钟 |
-| 构建 | 开始开发 | 开始 |
+| 需求确认 | 5分钟 | 你描述功能，AI整理 |
+| PRD生成 | 5分钟 | 明确功能范围和优先级 |
+| 技术设计 | 5分钟 | 确定技术栈和架构 |
+| Agent配置 | 1分钟 | 生成编码指令 |
+| 构建 | 开始 | 计划→执行→验证循环 |
 
 ---
 
@@ -37,7 +36,16 @@
 
 **第3问：** "你偏好什么技术栈？或者让我推荐？"
 
-**第4问：** "你的项目有后端吗？还是纯前端？"
+**第4问：** "你的项目类型是什么？"
+
+### 平台选择
+
+| 类型 | 说明 |
+|------|------|
+| Web 前端 | React/Vue/Next.js 等 |
+| Android | Kotlin + Jetpack Compose 等 |
+| 后端服务 | Node.js/FastAPI 等 |
+| 混合项目 | 前端 + 后端 + 移动端 |
 
 ---
 
@@ -87,35 +95,47 @@
 
 ---
 
-## 项目结构
+## 项目结构示例
 
+### Web 项目
 ```
 your-project/
-├── 📁 docs/
-│   ├── PRD-[项目名]-MVP.md
-│   └── TechDesign-[项目名]-MVP.md
-├── 📁 agent_docs/
-│   ├── product_requirements.md
-│   └── tech_stack.md
-├── 📄 AGENTS.md
-├── 📄 MEMORY.md
-└── 📁 src/
+├── docs/
+│   ├── PRD-*.md
+│   └── TechDesign-*.md
+├── src/
+├── AGENTS.md
+└── MEMORY.md
+```
+
+### Android 项目
+```
+your-project/
+├── app/
+│   └── src/main/
+│       ├── java/com/example/
+│       └── res/
+├── docs/
+│   ├── PRD-*.md
+│   └── TechDesign-*.md
+├── AGENTS.md
+└── MEMORY.md
 ```
 
 ---
 
 ## 快速示例
 
-**你说：** "我想做一个简单的待办事项应用，功能是添加、删除、完成待办项"
+**你说：** "我想做一个待办事项 Android 应用，功能是添加、删除、完成待办项"
 
 **AI 会问：**
 1. "需要登录功能吗？"
-2. "数据需要保存吗？还是有本地存储就够了？"
-3. "技术栈有偏好吗？"
+2. "数据需要同步到云端吗？还是本地存储就够了？"
+3. "UI 风格有偏好吗？Material Design 3？"
 
 **你回答后，AI 自动生成：**
 - PRD文档
-- 技术设计（React + localStorage 或其他）
+- 技术设计（Kotlin + Jetpack Compose + Room）
 - Agent配置文件
 - 开始构建第一个功能
 
@@ -128,6 +148,15 @@ your-project/
 | AI 做多余调研 | "跳过调研，直接进入PRD" |
 | 过于复杂 | "简化方案，MVP最简方式是什么？" |
 | 不满意结果 | "调整[功能]，重新生成" |
+
+---
+
+## 支持的平台
+
+- ✅ Web 前端（React、Vue、Next.js 等）
+- ✅ Android（Kotlin + Jetpack Compose）
+- ✅ 后端服务（Node.js、FastAPI、Spring Boot）
+- ✅ 混合项目
 
 ---
 
