@@ -1,35 +1,35 @@
-# AGENTS.md — Master Plan for [App Name]
+# AGENTS.md — [应用名称] 总体规划
 
-## Project Overview & Stack
-**App:** [App Name]
-**Overview:** [One-paragraph description of the project, its core value proposition, and primary users]
-**Stack:** [Primary Tech Stack, e.g., Next.js, React, Node, PostgreSQL]
-**Critical Constraints:** [e.g., Mobile-first design required, Multi-tenant architecture, Strict TypeScript adherence]
+## 项目概述与技术栈
+**应用：** [应用名称]
+**概述：** [项目的一段描述，包括核心价值主张和主要用户群体]
+**技术栈：** [主要技术栈，例如 Next.js、React、Node、PostgreSQL]
+**关键约束：** [例如：必须移动端优先、多租户架构、严格遵循 TypeScript]
 
-## Setup & Commands
-Execute these commands for standard development workflows. Do not invent new package manager commands.
-- **Setup:** `[npm install / pnpm install]`
-- **Development:** `[npm run dev]`
-- **Testing:** `[npm test]`
-- **Linting & Formatting:** `[npm run lint]`
-- **Build:** `[npm run build]`
+## 环境配置与命令
+执行以下命令进行标准开发流程。请勿自行创造新的包管理器命令。
+- **安装依赖：** `[npm install / pnpm install]`
+- **开发：** `[npm run dev]`
+- **测试：** `[npm test]`
+- **代码检查与格式化：** `[npm run lint]`
+- **构建：** `[npm run build]`
 
-## Protected Areas
-Do NOT modify these areas without explicit human approval:
-- **Infrastructure:** `infrastructure/`, Dockerfiles, and deployment workflows (`.github/workflows/`).
-- **Database Migrations:** Existing migration files.
-- **Third-Party Integrations:** Payment gateway configurations and Auth setups.
+## 受保护区域
+未经明确人工批准，不得修改以下区域：
+- **基础设施：** `infrastructure/`、Dockerfile 以及部署工作流（`.github/workflows/`）。
+- **数据库迁移：** 现有的迁移文件。
+- **第三方集成：** 支付网关配置和认证设置。
 
-## Coding Conventions
-- **Formatting:** Enforce required ESLint/Prettier rules strictly. No warnings allowed in new code.
-- **Architecture rules:** Use feature-based folder organization. Maintain hexagonal boundaries where domain logic does not depend on external frameworks.
-- **Testing Expectations:** All new utilities must have unit tests. Core user flows require integration tests.
-- **Type Safety:** Use strict TypeScript. Avoid `any` types; define precise interfaces or use `unknown`.
+## 代码规范
+- **格式化：** 严格遵守必需的 ESLint/Prettier 规则。新代码中不允许出现任何警告。
+- **架构规则：** 使用基于功能的文件夹组织。在领域逻辑不依赖外部框架的地方保持六边形边界。
+- **测试要求：** 所有新工具函数必须有单元测试。核心用户流程需要集成测试。
+- **类型安全：** 使用严格 TypeScript。避免使用 `any` 类型；定义精确的接口或使用 `unknown`。
 
-## Agent Behaviors
-These rules apply across all AI coding assistants (Cursor, Copilot, Claude, Gemini):
-1. **Plan Before Execution:** ALWAYS propose a brief step-by-step plan before changing more than one file.
-2. **Refactor Over Rewrite:** Prefer refactoring existing functions incrementally rather than completely rewriting large blocks of code.
-3. **Context Compaction:** Write states to `MEMORY.md` or a `spec.md` instead of filling context history during long sessions.
-4. **Iterative Verification:** Run tests or linters after each logical change. Fix errors before proceeding (See `REVIEW-CHECKLIST.md`).
-5. **Team Coordination:** If working in Agent Teams, require the Team Lead to approve teammate PRs or plans.
+## Agent 行为规范
+以下规则适用于所有 AI 编码助手（Cursor、Copilot、Claude、Gemini）：
+1. **执行前先规划：** 在修改超过一个文件之前，始终提出简短的逐步计划。
+2. **重构优于重写：** 倾向于增量重构现有函数，而不是完全重写大段代码。
+3. **上下文压缩：** 在长时间会话中，将状态写入 `MEMORY.md` 或 `spec.md`，而不是填满上下文历史。
+4. **迭代验证：** 在每个逻辑更改后运行测试或代码检查器。修复错误后再继续（参见 `REVIEW-CHECKLIST.md`）。
+5. **团队协作：** 如果在 Agent 团队中工作，需要团队负责人批准成员的 PR 或计划。

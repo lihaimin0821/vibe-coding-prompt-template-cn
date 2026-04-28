@@ -1,377 +1,378 @@
-# Part 4 — Generate AGENTS.md and AI Agent Configuration Files
+# 第4部分 — 生成 AGENTS.md 和 AI Agent 配置文件
 
-I'll help you create the instruction files that will guide your AI coding assistant to build your MVP. These files are what make the magic happen!
+我来帮你创建指导 AI 编程助手构建 MVP 的指令文件。这些文件是让魔法发生的关键！
 
 <details>
-<summary><b>Required Documents — Please Attach</b></summary>
+<summary><b>必需文档 — 请附上</b></summary>
 
-### Required:
-1. **PRD Document** (from Part 2) — Defines WHAT to build
-2. **Technical Design Document** (from Part 3) — Defines HOW to build
+### 必需：
+1. **PRD 文档**（来自第2部分）— 定义要构建什么
+2. **技术设计文档**（来自第3部分）— 定义如何构建
 
-### Optional but Helpful:
-- **Research Findings** (from Part 1) — Additional context
+### 可选但有帮助：
+- **研究结果**（来自第1部分）— 额外背景信息
 
-Attach these in any format (.txt, .pdf, .docx, .md) or paste if short.
+可以以任何格式附上这些文件（.txt、.pdf、.docx、.md）或直接粘贴（如果内容较短）。
 
 </details>
 
-After attaching your files, confirm your setup:
+附上文件后，请确认你的设置：
 
-**A) Technical Level:**
-- A) **Vibe-coder** — AI does everything, I guide and test
-- B) **Developer** — I code with AI assistance
-- C) **Somewhere in between** — Learning while building
+**A) 技术水平：**
+- A) **Vibe-coder** — AI 做所有事情，我来指导和测试
+- B) **Developer** — 我和 AI 一起编程
+- C) **介于两者之间** — 边做边学
 
-**B) Which AI Tool(s) Will You Use?** (Can select multiple)
-1. **Claude Code** — Terminal-based agent with session memory
-2. **Gemini CLI** — Free terminal agent
-3. **Google Antigravity / equivalent** — Agent-first IDE (availability may vary)
-4. **Cursor** — AI-powered IDE
-5. **VS Code + GitHub Copilot** — IDE with AI extension
-6. **Lovable / v0** — No-code platforms
+**B) 你将使用哪种 AI 工具？**（可多选）
+1. **Claude Code** — 终端代理，带会话记忆
+2. **Gemini CLI** — 免费终端代理
+3. **Google Antigravity / 同等工具** — Agent 优先的 IDE（可用性可能不同）
+4. **Cursor** — AI 驱动的 IDE
+5. **VS Code + GitHub Copilot** — 带 AI 扩展的 IDE
+6. **Lovable / v0** — 无代码平台
 
-Please attach files and type: A/B/C and tool numbers (e.g., "A, 1,4"):
+请附上文件并输入：A/B/C 和工具编号（例如："A, 1,4"）：
 
 ---
 
-## Instructions for AI Assistant
+## AI 助手指令
 
 <details>
-<summary><b>Generation Rules & Logic</b></summary>
+<summary><b>生成规则与逻辑</b></summary>
 
-### Your Goal
-You are an expert Tech Lead setting up a **Progressive Disclosure** documentation system for an AI Agent. Your output must be **modular** to prevent context window overload.
+### 你的目标
+你是一位专家级技术负责人，正在为 AI Agent 设置**渐进式披露**文档系统。你的输出必须是**模块化的**，以防止上下文窗口过载。
 
-1. **Master Plan (`AGENTS.md`)**: High-level context, roadmap, and active state.
-2. **Detailed Docs (`agent_docs/`)**: Specific implementation details.
-3. **Tool Configs**: Concise pointers to the above.
+1. **主计划（`AGENTS.md`）**：高级上下文、路线图和当前状态。
+2. **详细文档（`agent_docs/`）**：具体的实现细节。
+3. **工具配置**：简洁地指向上述文档。
 
-### Content Extraction Guidelines
-- **From PRD:** Extract exact feature names, user stories, success metrics, and constraints.
-- **From Tech Design:** Extract exact tech stack, architecture decisions, and implementation approaches.
-- **Language Level:** Adjust explanations in `agent_docs/` based on user's technical level (A/B/C).
-  - **Level A (Vibe-coder):** Explain *concepts* simply, focus on "what to do next".
-  - **Level B (Developer):** Focus on *architecture*, patterns, and best practices.
-- **Be Specific:** Replace all bracketed placeholders with actual project details.
-- **Keep Examples:** Include code examples with comments explaining the "why".
+### 内容提取指南
+- **从 PRD 提取：** 提取确切的特性名称、用户故事、成功指标和约束条件。
+- **从技术设计提取：** 提取确切的技术栈、架构决策和实现方法。
+- **语言级别：** 根据用户的技术水平（A/B/C）调整 `agent_docs/` 中的解释。
+  - **A 级（Vibe-coder）：** 简单地解释*概念*，专注于"下一步做什么"。
+  - **B 级（Developer）：** 专注于*架构*、模式、最佳实践。
+- **要具体：** 用实际项目细节替换所有带括号的占位符。
+- **保留示例：** 包含代码示例，并用注释解释"为什么"。
 
-### High-Order Prompts (Meta-Cognition)
-Include these behavioral instructions in AGENTS.md to improve agent reasoning:
-
-```markdown
-## How I Should Think
-1. **Understand Intent First**: Before answering, identify what the user actually needs
-2. **Ask If Unsure**: If critical information is missing, ask before proceeding
-3. **Plan Before Coding**: Propose a plan, ask for approval, then implement
-4. **Verify After Changes**: Run tests/linters or manual checks after each change
-5. **Explain Trade-offs**: When recommending something, mention alternatives
-```
-
-### Plan → Execute → Verify (Required)
-- **Plan:** Outline a brief approach and ask for approval before coding.
-- **Plan Mode:** If the tool supports Plan/Reflect mode, use it for this step.
-- **Execute:** Implement one feature at a time.
-- **Verify:** Run tests/linters or manual checks after each feature; fix before moving on.
-
-### Context & Memory Guidance
-- Treat `AGENTS.md` and `agent_docs/` as living docs.
-- Use tool config files (`CLAUDE.md`, `GEMINI.md`, `.cursor/rules/` or legacy `.cursorrules`, etc.) for persistent project rules.
-- Update these files as the project scales (commands, conventions, constraints).
-- Avoid restarting in empty chats during implementation; summarize/compact first.
-
-### Plugin Support (Recommended)
-- If your IDE supports agent plugins, prefer plugin/rules packages over one-off manual setup.
-- Verify plugin load status before implementation work.
-- If behavior seems wrong: confirm loaded prompts/skills/hooks first, then retry with "Read AGENTS.md first".
-
-### Optional Multi-Agent/Parallel Work
-- If the tool supports sub-agents or parallel search, delegate exploration or test checks to speed up work.
-
-### Checkpoints & Pre-Commit Hooks
-- Create checkpoints/commits after milestones.
-- Use pre-commit hooks to enforce formatting, linting, and tests where applicable.
-
-### Anti-Patterns to Include
-Add these to tool configs to prevent common AI mistakes:
+### 高级指令（元认知）
+在 AGENTS.md 中包含这些行为指令以提高 Agent 的推理能力：
 
 ```markdown
-## What NOT To Do
-- Do NOT delete files without explicit confirmation
-- Do NOT modify database schemas without backup plan
-- Do NOT add features not in the current phase
-- Do NOT skip tests for "simple" changes
-- Do NOT bypass failing tests or pre-commit hooks
-- Do NOT use deprecated libraries or patterns
+## 我应该如何思考
+1. **先理解意图**：在回答之前，确认用户实际需要什么
+2. **不确定时提问**：如果缺少关键信息，先提问再继续
+3. **编码前先计划**：提出计划，请求批准后再实施
+4. **更改后验证**：每次更改后运行测试/linter 或手动检查
+5. **解释权衡**：在推荐某件事时，提及备选方案
 ```
 
-### Strict Anti-Vibe Engineering Rules
-For developer-level projects, add these to enforce production quality:
+### 计划 → 执行 → 验证（必需）
+- **计划：** 概述大致方法并在编码前请求批准。
+- **计划模式：** 如果工具支持计划/反思模式，用它来完成此步骤。
+- **执行：** 一次实现一个功能。
+- **验证：** 每个功能完成后运行测试/linter 或手动检查；修复后再继续。
+
+### 上下文与内存指南
+- 将 `AGENTS.md` 和 `agent_docs/` 视为动态文档。
+- 使用工具配置文件（`CLAUDE.md`、`GEMINI.md`、`.cursor/rules/` 或旧版 `.cursorrules` 等）来存储持久化的项目规则。
+- 随着项目规模扩大更新这些文件（命令、约定、约束）。
+- 在实施过程中避免在空聊天中重新开始；先总结/压缩上下文。
+
+### 插件支持（推荐）
+- 如果你的 IDE 支持 Agent 插件，优先使用插件/规则包而非一次性手动设置。
+- 在实施工作前验证插件加载状态。
+- 如果行为看起来不对：先确认已加载的提示/skills/hooks，然后使用"先读取 AGENTS.md"重试。
+
+### 可选的多 Agent/并行工作
+- 如果工具支持子 Agent 或并行搜索，委托探索或测试检查以加快工作速度。
+
+### 检查点与预提交钩子
+- 在里程碑后创建检查点/提交。
+- 在适用的情况下使用预提交钩子来强制格式、linting 和测试。
+
+### 需要包含的反模式
+将这些添加到工具配置中以防止常见的 AI 错误：
 
 ```markdown
-## Engineering Constraints
-
-### Type Safety (No Compromises)
-- The `any` type is FORBIDDEN—use `unknown` with type guards
-- All function parameters and returns must be typed
-- Use Zod or similar for runtime validation
-
-### Architectural Sovereignty
-- Routes/controllers handle request/response ONLY
-- All business logic goes in `services/` or `core/`
-- No database calls from route handlers
-
-### Library Governance
-- Check existing `package.json` before suggesting new dependencies
-- Prefer native APIs over libraries (fetch over axios)
-- Avoid deprecated patterns; use the project's standard data-fetching approach (RSC, route loaders, query library, or direct calls — whatever `agent_docs/tech_stack.md` specifies)
-
-### Clear Communication Rule
-- State issues briefly and fix them immediately; do not repeat apologies or filler text
-- If context is missing, ask ONE specific clarifying question before proceeding
-
-### Workflow Discipline
-- Pre-commit hooks must pass before commits (or ask if they should be bypassed)
-- If verification fails, fix issues before continuing
+## 禁止事项
+- 未经明确确认不得删除文件
+- 未经备份计划不得修改数据库 schema
+- 不得添加当前阶段未包含的功能
+- 不得为"简单"更改跳过测试
+- 不得绕过失败的测试或预提交钩子
+- 不得使用已弃用的库或模式
 ```
 
-### "Less is More" for Configs
-- Do **NOT** put giant prompt dumps into `CLAUDE.md` or Cursor rules files.
-- Instead, put that content into `agent_docs/code_patterns.md` or `agent_docs/tech_stack.md`.
-- The config files should merely *point* the AI to the right documentation.
+### 严格的反 Vibe 工程规则
+对于开发者级项目，添加这些以强制执行生产质量：
 
-### Model Naming Policy
-- Use model family names (Claude Sonnet, Claude Opus, Gemini Pro, Gemini Flash) in generated docs unless the user explicitly asks for pinned versions.
+```markdown
+## 工程约束
+
+### 类型安全（无妥协）
+- 禁止使用 `any` 类型——使用 `unknown` 和类型守卫
+- 所有函数参数和返回值必须类型化
+- 使用 Zod 或类似工具进行运行时验证
+
+### 架构主权
+- 路由/控制器仅处理请求/响应
+- 所有业务逻辑放在 `services/` 或 `core/` 中
+- 路由处理器中不得有数据库调用
+
+### 库管理
+- 在建议新依赖项之前先检查现有的 `package.json`
+- 优先使用原生 API 而非库（fetch 优于 axios）
+- 避免已弃用的模式；使用项目的标准数据获取方式（RSC、路由加载器、查询库或直接调用——由 `agent_docs/tech_stack.md` 指定）
+
+### 清晰沟通规则
+- 简明扼要地陈述问题并立即修复；不要重复道歉或填充文字
+- 如果缺少上下文，在继续之前先提一个具体的澄清问题
+
+### 工作流程纪律
+- 提交前预提交钩子必须通过（或者询问是否应该绕过）
+- 如果验证失败，在继续之前修复问题
+```
+
+### 配置文件的"少即是多"
+- **不要**将大量提示内容放入 `CLAUDE.md` 或 Cursor 规则文件中。
+- 相反，将这些内容放入 `agent_docs/code_patterns.md` 或 `agent_docs/tech_stack.md`。
+- 配置文件应该只是*指向*正确的文档。
+
+### 模型命名策略
+- 在生成的文档中使用模型系列名称（Claude Sonnet、Claude Opus、Gemini Pro、Gemini Flash），除非用户明确要求固定版本。
 
 </details>
 
-After receiving the files, extract the following:
+收到文件后，提取以下内容：
 
-**From PRD (MUST EXTRACT):**
-- Product name and one-line description
-- Primary user story (exact text)
-- All must-have features (exact list)
-- Nice-to-have features (exact list)
-- NOT in MVP features (exact list)
-- Success metrics (all of them)
-- UI/UX requirements (design words/vibe)
-- Timeline and constraints
+**从 PRD 提取（必须）：**
+- 产品名称和一句话描述
+- 主要用户故事（原文）
+- 所有必须有功能（完整列表）
+- 最好有功能（完整列表）
+- MVP 不包含的功能（完整列表）
+- 成功指标（全部）
+- UI/UX 要求（设计词汇/vibe）
+- 时间线和约束
 
-**From Tech Design (MUST EXTRACT):**
-- Complete tech stack (frontend, backend, database, deployment)
-- Project structure (exact folder layout)
-- Database schema (if provided)
-- Implementation approach for each feature
-- Deployment platform and steps
-- Budget constraints
-- AI tool recommendations
-
----
-
-## 🎯 Action Required: Instantiate the Templates
-
-Your workflow is governed by the `vibe-coding-prompt-template`. This repository comes with a pre-configured `/templates/` directory containing the 2026 Boilerplate. 
-
-Your task is to **copy** these templates to the project root and **fill in the bracketed variables** using the provided PRD and Tech Design. Do not invent new structures.
-
-### 1. Root Files
-- Copy `templates/AGENTS.md` to `AGENTS.md` in the root folder. Replace all `[bracketed]` variables with project-specific details from the Tech Design.
-- Copy `templates/MEMORY.md` to `MEMORY.md` in the root folder. Initialize the `## 🏗️ Active Phase & Goal` based on the PRD's Phase 1.
-- Copy `templates/REVIEW-CHECKLIST.md` to the root folder as-is.
-
-### 2. Documentation Folder
-- Copy the entire `templates/agent_docs/` folder to `agent_docs/` in the project root.
-- Open `agent_docs/tech_stack.md` and insert the explicit languages, frameworks, and setup commands from the Tech Design.
-- Open `agent_docs/testing.md` and define the test framework as specified.
-- Open `agent_docs/project_brief.md` and insert the vision and core conventions.
-- Open `agent_docs/product_requirements.md` and dump the complete feature list and user stories from the PRD.
+**从技术设计提取（必须）：**
+- 完整技术栈（前端、后端、数据库、部署）
+- 项目结构（确切的文件夹布局）
+- 数据库 schema（如果有提供）
+- 每个功能的实现方法
+- 部署平台和步骤
+- 预算约束
+- AI 工具建议
 
 ---
 
-Once completed, you the Agent must stop and say: 
-> *"Templates instantiated! You can now start the coding loop. Shall we begin Phase 1?"*
-Create a folder named `agent_docs` and add these files. **Fill them with RICH DETAIL from the source documents.**
+## 🎯 需要采取的行动：实例化模板
+
+你的工作流程由 `vibe-coding-prompt-template` 管理。这个仓库带有一个预配置的 `/templates/` 目录，包含 2026 年样板代码。
+
+你的任务是**复制**这些模板到项目根目录，并使用提供的 PRD 和技术设计**填充带括号的变量**。不要发明新的结构。
+
+### 1. 根文件
+- 将 `templates/AGENTS.md` 复制到根文件夹的 `AGENTS.md`。用技术设计中的项目特定详情替换所有 `[带括号]` 的变量。
+- 将 `templates/MEMORY.md` 复制到根文件夹的 `MEMORY.md`。根据 PRD 的第一阶段初始化 `## 🏗️ 当前阶段与目标`。
+- 将 `templates/REVIEW-CHECKLIST.md` 按原样复制到根文件夹。
+
+### 2. 文档文件夹
+- 将整个 `templates/agent_docs/` 文件夹复制到项目根目录的 `agent_docs/`。
+- 打开 `agent_docs/tech_stack.md` 并插入技术设计中明确的语言、框架和设置命令。
+- 打开 `agent_docs/testing.md` 并根据指定定义测试框架。
+- 打开 `agent_docs/project_brief.md` 并插入愿景和核心约定。
+- 打开 `agent_docs/product_requirements.md` 并从 PRD 中导入完整的功能列表和用户故事。
+
+---
+
+完成后，Agent 必须停下来并说：
+> *"模板已实例化！你现在可以开始编码循环了。我们开始第一阶段吗？"*
+
+创建一个名为 `agent_docs` 的文件夹并添加以下文件。**用源文档中的丰富细节填充它们。**
 
 #### `agent_docs/tech_stack.md`
-*Instructions: List every library, version, and setup command from the Tech Design.*
+*说明：从技术设计中列出每个库、版本和设置命令。*
 ```markdown
-# Tech Stack & Tools
-- **Frontend:** [Framework]
-- **Backend:** [Framework]
-- **Database:** [Database]
-- **Styling:** [Library]
+# 技术栈与工具
+- **前端：** [框架]
+- **后端：** [框架]
+- **数据库：** [数据库]
+- **样式：** [库]
 
-// [Example component code for their stack]
+// [他们技术栈的示例组件代码]
 ```
 
-## Error Handling
+## 错误处理
 ```javascript
-// [Example error handling pattern]
+// [错误处理模式示例]
 ```
 
-## Naming Conventions
-- [List conventions]
+## 命名约定
+- [列出约定]
 ```
 
 #### `agent_docs/project_brief.md`
-*Instructions: Capture persistent project rules, conventions, and workflow expectations. Keep this updated as the project scales.*
+*说明：捕获持久化的项目规则、约定和工作流程期望。随着项目规模扩大保持更新。*
 ```markdown
-# Project Brief (Persistent)
-- **Product vision:** [One-line summary]
-- **Coding conventions:** [Naming, formatting, architecture]
-- **Quality gates:** [Tests, pre-commit hooks, review rules]
-- **Key commands:** [Dev/test/build commands]
-- **Update cadence:** [When to refresh this brief]
+# 项目简报（持久化）
+- **产品愿景：** [一句话总结]
+- **编码约定：** [命名、格式、架构]
+- **质量门禁：** [测试、预提交钩子、审查规则]
+- **关键命令：** [开发/测试/构建命令]
+- **更新频率：** [何时刷新此简报]
 ```
 
 #### `agent_docs/product_requirements.md`
-*Instructions: Copy the core requirements, user stories, and success metrics from the PRD.*
+*说明：从 PRD 复制核心需求、用户故事和成功指标。*
 ```markdown
-# Product Requirements
-[Content from PRD]
+# 产品需求
+[PRD 中的内容]
 ```
 
 #### `agent_docs/testing.md`
-*Instructions: Define the testing strategy based on the Tech Design.*
+*说明：根据技术设计定义测试策略。*
 ```markdown
-# Testing Strategy
-- **Unit Tests:** [Tool]
-- **E2E Tests:** [Tool]
-- **Manual Checks:** [List]
-- **Pre-commit Hooks:** [Lint/format/tests to run before commit]
-- **Verification Loop:** Run checks after each feature and fix failures
+# 测试策略
+- **单元测试：** [工具]
+- **E2E 测试：** [工具]
+- **手动检查：** [列表]
+- **预提交钩子：** [提交前运行的 lint/format/测试]
+- **验证循环：** 每个功能后运行检查并修复失败
 ```
 
 ---
 
-## Generate Tool-Specific Configuration Files
+## 生成特定工具的配置文件
 
-Based on the tools they selected, generate the appropriate configuration files below. Each file should reference the AGENTS.md as the primary source of truth and add tool-specific behavior and commands.
+根据他们选择的工具，在下方生成相应的配置文件。每个文件应该将 AGENTS.md 作为主要事实来源，并添加特定工具的行为和命令。
 
-### For Claude Code Users — CLAUDE.md:
+### 适用于 Claude Code 用户 — CLAUDE.md：
 
 ```markdown
-# CLAUDE.md — Claude Code Configuration for [App Name]
+# CLAUDE.md — [应用名称] 的 Claude Code 配置
 
-## Project Context
-**App:** [App Name]
-**Stack:** [Tech Stack]
-**Stage:** MVP Development
-**User Level:** [Level]
+## 项目上下文
+**应用：** [应用名称]
+**技术栈：** [技术栈]
+**阶段：** MVP 开发
+**用户级别：** [级别]
 
-## Directives
-1. **Master Plan:** Always read `AGENTS.md` first. It contains the current phase and tasks.
-2. **Documentation:** Refer to `agent_docs/` for tech stack details, code patterns, and testing guides.
-3. **Plan-First:** Propose a brief plan and wait for approval before coding.
-4. **Incremental Build:** Build one small feature at a time. Test frequently.
-5. **Pre-Commit:** If hooks exist, run them before commits; fix failures.
-6. **No Linting:** Do not act as a linter. Use `npm run lint` if needed.
-7. **Communication:** Be concise. Ask clarifying questions when needed.
+## 指令
+1. **主计划：** 始终先阅读 `AGENTS.md`。它包含当前阶段和任务。
+2. **文档：** 参考 `agent_docs/` 获取技术栈详情、代码模式和测试指南。
+3. **先计划：** 编码前先提出简要计划并等待批准。
+4. **增量构建：** 一次构建一个小功能。频繁测试。
+5. **预提交：** 如果存在钩子，在提交前运行；修复失败。
+6. **不充当 linter：** 不作为 linter 使用。如有需要使用 `npm run lint`。
+7. **沟通：** 简洁。需要时提出澄清问题。
 
-## Commands
-- `npm run dev` — Start server
-- `npm test` — Run tests
-- `npm run lint` — Check code style
+## 命令
+- `npm run dev` — 启动服务器
+- `npm test` — 运行测试
+- `npm run lint` — 检查代码风格
 ```
 
-### For Cursor Users — .cursorrules:
+### 适用于 Cursor 用户 — .cursorrules：
 
-Prefer `.cursor/rules/` for modern Cursor setups. If needed, generate legacy `.cursorrules` as a compatibility fallback.
+对于现代 Cursor 设置，优先使用 `.cursor/rules/`。如有需要，生成旧版 `.cursorrules` 作为兼容性回退。
 
 ```markdown
-# Cursor Rules for [App Name]
+# Cursor Rules for [应用名称]
 
-## Project Context
-**App:** [App Name]
-**Stack:** [Tech Stack]
-**Stage:** MVP Development
-**User Level:** [Level]
+## 项目上下文
+**应用：** [应用名称]
+**技术栈：** [技术栈]
+**阶段：** MVP 开发
+**用户级别：** [级别]
 
-## Directives
-1. **Master Plan:** Always read `AGENTS.md` first. It contains the current phase and tasks.
-2. **Documentation:** Refer to `agent_docs/` for tech stack details, code patterns, and testing guides.
-3. **Plan-First:** Propose a brief plan and wait for approval before coding.
-4. **Incremental Build:** Build one small feature at a time. Test frequently.
-5. **Pre-Commit:** If hooks exist, run them before commits; fix failures.
-6. **No Linting:** Do not act as a linter. Use `npm run lint` if needed.
-7. **Communication:** Be concise. Ask clarifying questions when needed.
+## 指令
+1. **主计划：** 始终先阅读 `AGENTS.md`。它包含当前阶段和任务。
+2. **文档：** 参考 `agent_docs/` 获取技术栈详情、代码模式和测试指南。
+3. **先计划：** 编码前先提出简要计划并等待批准。
+4. **增量构建：** 一次构建一个小功能。频繁测试。
+5. **预提交：** 如果存在钩子，在提交前运行；修复失败。
+6. **不充当 linter：** 不作为 linter 使用。如有需要使用 `npm run lint`。
+7. **沟通：** 简洁。需要时提出澄清问题。
 
-## Commands
-- `npm run dev` — Start server
-- `npm test` — Run tests
-- `npm run lint` — Check code style
+## 命令
+- `npm run dev` — 启动服务器
+- `npm test` — 运行测试
+- `npm run lint` — 检查代码风格
 ```
 
-### For Gemini CLI / Antigravity Users — GEMINI.md:
+### 适用于 Gemini CLI / Antigravity 用户 — GEMINI.md：
 
 ```markdown
-# GEMINI.md — Gemini CLI / Agent-First IDE Configuration for [App Name]
+# GEMINI.md — [应用名称] 的 Gemini CLI / Agent 优先 IDE 配置
 
-## Project Context
-**App:** [App Name]
-**Stack:** [Tech Stack]
-**Stage:** MVP Development
-**User Level:** [Level]
+## 项目上下文
+**应用：** [应用名称]
+**技术栈：** [技术栈]
+**阶段：** MVP 开发
+**用户级别：** [级别]
 
-## Directives
-1. **Master Plan:** Always read `AGENTS.md` first. It contains the current phase and tasks.
-2. **Documentation:** Refer to `agent_docs/` for tech stack details, code patterns, and testing guides.
-3. **Plan-First:** Propose a brief plan and wait for approval before coding.
-4. **Incremental Build:** Build one small feature at a time. Test frequently.
-5. **Pre-Commit:** If hooks exist, run them before commits; fix failures.
-6. **No Linting:** Do not act as a linter. Use `npm run lint` if needed.
-7. **Communication:** Be concise. Ask clarifying questions when needed.
+## 指令
+1. **主计划：** 始终先阅读 `AGENTS.md`。它包含当前阶段和任务。
+2. **文档：** 参考 `agent_docs/` 获取技术栈详情、代码模式和测试指南。
+3. **先计划：** 编码前先提出简要计划并等待批准。
+4. **增量构建：** 一次构建一个小功能。频繁测试。
+5. **预提交：** 如果存在钩子，在提交前运行；修复失败。
+6. **不充当 linter：** 不作为 linter 使用。如有需要使用 `npm run lint`。
+7. **沟通：** 简洁。需要时提出澄清问题。
 
-## Commands
-- `npm run dev` — Start server
-- `npm test` — Run tests
-- `npm run lint` — Check code style
+## 命令
+- `npm run dev` — 启动服务器
+- `npm test` — 运行测试
+- `npm run lint` — 检查代码风格
 ```
 
-### For VS Code + GitHub Copilot Users:
+### 适用于 VS Code + GitHub Copilot 用户：
 
-Create a `.github/copilot-instructions.md` file:
+创建一个 `.github/copilot-instructions.md` 文件：
 
 ```markdown
-# GitHub Copilot Instructions for [App Name]
+# [应用名称] 的 GitHub Copilot 指令
 
-## Project Context
-**App:** [App Name]
-**Stack:** [Tech Stack]
-**Stage:** MVP Development
+## 项目上下文
+**应用：** [应用名称]
+**技术栈：** [技术栈]
+**阶段：** MVP 开发
 
-## Directives
-1. Read `AGENTS.md` for the current phase and tasks.
-2. Refer to `agent_docs/` for tech stack details and code patterns.
-3. Follow existing code conventions in the repository.
-4. Write tests for new functionality.
-5. Keep changes incremental and focused.
+## 指令
+1. 阅读 `AGENTS.md` 获取当前阶段和任务。
+2. 参考 `agent_docs/` 获取技术栈详情和代码模式。
+3. 遵循仓库中现有的代码约定。
+4. 为新功能编写测试。
+5. 保持更改的增量性和专注性。
 
-## Commands
-- `npm run dev` — Start server
-- `npm test` — Run tests
-- `npm run lint` — Check code style
+## 命令
+- `npm run dev` — 启动服务器
+- `npm test` — 运行测试
+- `npm run lint` — 检查代码风格
 ```
 
 ---
 
-## Final Instructions
+## 最终指令
 
-After generating AGENTS.md and the appropriate configuration files based on their tool selection, say:
+生成 AGENTS.md 和基于他们工具选择的相应配置文件后，说：
 
-"I've created your AI agent instruction files above! Here's what you need to do:
+"我已经创建了上面的 AI Agent 指令文件！这是你需要做的事情：
 
-## Files to Save:
+## 需要保存的文件：
 
-1. **AGENTS.md** — Save in your project root directory
-   - This is the universal instruction file ALL AI assistants can read
+1. **AGENTS.md** — 保存在项目根目录
+   - 这是所有 AI 助手都可以读取的通用指令文件
 
-2. **agent_docs/** — Create this folder and save the detailed markdown files inside it.
+2. **agent_docs/** — 创建此文件夹并将详细的 markdown 文件保存在里面。
 
-3. **Tool-Specific Config Files** (save the ones for your chosen tools):
-   [List the specific files generated based on their selection]
+3. **特定工具配置文件**（为你选择的工具保存相应的文件）：
+   [根据他们的选择列出具体生成的文件]
 
-## Your Project Structure Should Now Look Like:
+## 你的项目结构现在应该看起来像：
 
 ```
 your-app/
@@ -379,106 +380,106 @@ your-app/
 │   ├── research-[AppName].md
 │   ├── PRD-[AppName]-MVP.md
 │   └── TechDesign-[AppName]-MVP.md
-├── AGENTS.md                    ← Universal instructions
-├── MEMORY.md                    ← Artifact-first memory
-├── agent_docs/                  ← Detailed documentation
+├── AGENTS.md                    ← 通用指令
+├── MEMORY.md                    ← 产物优先的记忆
+├── agent_docs/                  ← 详细文档
 │   ├── tech_stack.md
 │   ├── code_patterns.md
 │   ├── project_brief.md
 │   ├── product_requirements.md
 │   └── testing.md
-├── [Tool-specific files]       ← Based on your selection
-└── (your code will go here)
+├── [特定工具文件]               ← 基于你的选择
+└── (你的代码将放在这里)
 ```
 
-## Ready to Build! Here's How to Start:
+## 准备好构建了！以下是开始方法：
 
-### With [Their Primary Tool]:
+### 使用 [他们的主要工具]：
 
-[Provide specific starting instructions based on their main tool choice, for example:]
+[根据他们的主要工具选择提供具体的起始说明，例如：]
 
-#### If Claude Code:
+#### 如果是 Claude Code：
 ```bash
 cd your-project
-claude init  # If first time
+claude init  # 如果是首次使用
 claude
-# Then say: "Read CLAUDE.md and AGENTS.md, then start building the MVP"
+# 然后说："阅读 CLAUDE.md 和 AGENTS.md，然后开始构建 MVP"
 ```
 
-#### If Cursor:
-1. Open your project folder in Cursor
-2. Ensure `.cursor/rules/` (or legacy `.cursorrules`) is detected
-3. Start with: "Read AGENTS.md and begin implementing the MVP step by step"
+#### 如果是 Cursor：
+1. 在 Cursor 中打开你的项目文件夹
+2. 确保 `.cursor/rules/`（或旧版 `.cursorrules`）被检测到
+3. 开始说："阅读 AGENTS.md 并开始逐步实现 MVP"
 
-#### If Lovable/v0:
-1. Go to [platform]
-2. Create new project
-3. Paste your PRD content
-4. Say: "Build this following the specifications"
+#### 如果是 Lovable/v0：
+1. 前往 [平台]
+2. 创建新项目
+3. 粘贴你的 PRD 内容
+4. 说："按照规格说明构建这个"
 
-#### If Gemini CLI:
+#### 如果是 Gemini CLI：
 ```bash
-gemini "Read GEMINI.md, then implement the MVP"
+gemini "阅读 GEMINI.md，然后实现 MVP"
 ```
 
-#### If Antigravity / equivalent agent-first IDE:
-1. Open the project in your selected agent-first IDE
-2. Ensure GEMINI.md is loaded as context
-3. Start with: "Read AGENTS.md and begin"
+#### 如果是 Antigravity / 同等 agent 优先的 IDE：
+1. 在你选择的 agent 优先 IDE 中打开项目
+2. 确保 GEMINI.md 作为上下文加载
+3. 开始说："阅读 AGENTS.md 并开始"
 
-## Your First Prompts:
+## 你的第一个提示：
 
-Based on your level ([their level]), start with:
+根据你的级别（[他们的级别]），从以下开始：
 
-**First prompt:**
-"[Suggested first prompt based on their level and tool]"
+**第一个提示：**
+"[根据他们的级别和工具建议的第一个提示]"
 
-**Follow-up prompts:**
-- "Show me the current progress"
-- "Test [feature name] and fix any issues"
-- "Set up pre-commit hooks for lint/tests and keep them updated as the project scales"
-- "Make it work on mobile"
-- "Add error handling"
-- "Deploy to [platform from Tech Design]"
+**后续提示：**
+- "显示当前进度"
+- "测试 [功能名称] 并修复任何问题"
+- "为 lint/测试设置预提交钩子，并随着项目规模扩大保持更新"
+- "让它在移动端也能工作"
+- "添加错误处理"
+- "部署到 [技术设计中的平台]"
 
-## Success Checklist:
+## 成功检查清单：
 
-Your setup is complete when:
-- [ ] All files saved in correct locations
-- [ ] Project folder created
-- [ ] AI tool opened and ready
-- [ ] First prompt typed and ready to send
+当你的设置完成时：
+- [ ] 所有文件保存在正确位置
+- [ ] 项目文件夹已创建
+- [ ] AI 工具已打开并准备就绪
+- [ ] 第一个提示已输入并准备发送
 
-## Remember:
+## 记住：
 
-- The AI will handle the complex coding
-- You guide the direction and test the results
-- Start simple, add features incrementally
-- Test after each feature
-- For frontend projects, require browser-based verification before marking tasks complete
-- Run a dedicated security pass before deployment
-- Update AGENTS.md and tool configs as the project scales
-- Don't hesitate to ask for explanations
+- AI 会处理复杂的编码
+- 你来指导方向和测试结果
+- 从简单开始，逐步添加功能
+- 每个功能后都要测试
+- 对于前端项目，在标记任务完成前要求基于浏览器的验证
+- 在部署前运行专门的安全检查
+- 随着项目规模扩大更新 AGENTS.md 和工具配置
+- 如有疑问尽管提问
 
-**You're ready to build! Your AI assistant has all the context it needs. Just start the conversation and watch your MVP come to life!**
+**你准备好构建了！你的 AI 助手拥有所需的所有上下文。只需开始对话，看着你的 MVP 变成现实！**
 
 <details>
-<summary><b>Troubleshooting</b></summary>
+<summary><b>故障排除</b></summary>
 
-**If AI seems confused:**
-- Start with: "First, read AGENTS.md completely, then confirm you understand the project"
+**如果 AI 看起来困惑：**
+- 从以下开始："首先，完全阅读 AGENTS.md，然后确认你理解了这个项目"
 
-**If AI skips steps:**
-- Say: "Let's go slower. Implement just [specific feature] and show me how to test it"
+**如果 AI 跳过步骤：**
+- 说："让我们慢一点。只需实现 [具体功能]，然后告诉我如何测试它"
 
-**If you get errors:**
-- Say: "I got this error: [error]. Please explain what it means and how to fix it"
+**如果遇到错误：**
+- 说："我遇到了这个错误：[错误]。请解释它的含义以及如何修复"
 
-**If AI overcomplicates:**
-- Say: "That seems complex. What's the simplest way to make this work for an MVP?"
+**如果 AI 过度复杂化：**
+- 说："这看起来很复杂。对于 MVP 来说，最简单的方式是什么？"
 
 </details>
 
-Would you like me to adjust any of the instructions before you start building?"
+你想在开始构建之前调整任何指令吗？
 
 ---

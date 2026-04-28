@@ -1,30 +1,30 @@
-# Cursor Cloud Agents & Dynamic Context (2026 Guide)
+# Cursor 云代理与动态上下文（2026 指南）
 
-As of early 2026, Cursor has shifted heavily toward **Cloud Agents** and **Dynamic Context Discovery**. If you are using Cursor for your MVP build (Step 5 of the vibe-coding workflow), use these patterns to prevent context bloat and silent breakages.
+截至 2026 年初，Cursor 已大幅转向 **云代理（Cloud Agents）** 和 **动态上下文发现（Dynamic Context Discovery）**。如果你使用 Cursor 进行 MVP 构建（vibe-coding 工作流程的第 5 步），请使用以下模式来防止上下文膨胀和静默故障。
 
-## 1. File-Centric Memory (Dynamic Context)
+## 1. 以文件为中心的记忆（动态上下文）
 
-Instead of keeping everything in the chat window, Cursor agents now perform much better when they read and write to physical files. 
+与在聊天窗口中保留所有内容不同，Cursor 代理在读取和写入物理文件时表现更好。
 
-### Do This:
-- When starting a new feature, tell the Agent: *"Review my PRD and write a `specs/001-feature-name.md` file detailing your plan."* 
-- Have the agent save long terminal logs or error outputs into physical files (e.g., `logs/build-error.md`) and command it to read that file to debug, rather than pasting 1,000 lines of error codes into the chat.
+### 这样做：
+- 开始新功能时，告诉代理：*"审查我的 PRD 并写一个 `specs/001-feature-name.md` 文件，详细说明你的计划。"*
+- 让代理将长终端日志或错误输出保存到物理文件中（例如 `logs/build-error.md`），然后命令它读取该文件进行调试，而不是将 1000 行错误代码粘贴到聊天中。
 
-## 2. Compaction & Hard Resets
+## 2. 压缩与硬重置
 
-Because Cursor can now retrieve context so efficiently from your workspace, you do **not** need to keep a single Cursor chat open for days. 
+因为 Cursor 现在可以非常高效地从你的工作区检索上下文，你**不需要**让单个 Cursor 聊天保持打开数天。
 
-- **The Pattern:** Build one logical feature. Once it works and is committed, tell Cursor: *"Summarize the current state of architecture and decisions made into `MEMORY.md`."*
-- Hit `Ctrl/Cmd + L` to start a completely fresh chat for the next feature. 
-- In the new chat, start with: *"Read `AGENTS.md` and `MEMORY.md`, then let's build the next feature."*
+- **模式：** 构建一个逻辑功能。一旦它工作并提交后，告诉 Cursor：*"将当前的架构状态和决策总结到 `MEMORY.md` 中。"*
+- 按 `Ctrl/Cmd + L` 开始一个全新的聊天，用于下一个功能。
+- 在新聊天中，首先输入：*"读取 `AGENTS.md` 和 `MEMORY.md`，然后我们来构建下一个功能。"*
 
-## 3. Rules & Instructions (`.cursor/rules/`)
+## 3. 规则与指令（`.cursor/rules/`）
 
-Cursor has moved away from the monolithic `.cursorrules` file. 
+Cursor 已不再使用单一的 `.cursorrules` 文件。
 
-Create a `.cursor/rules/` directory and split your rules logically. For example:
-- `01-architecture.mdc`: Hexagonal or feature-folder rules.
-- `02-testing.mdc`: Instructions to always run `pnpm test` before concluding a task.
-- `03-libraries.mdc`: Instructions on which UI libraries (like shadcn/ui) to enforce.
+创建一个 `.cursor/rules/` 目录并按逻辑分割你的规则。例如：
+- `01-architecture.mdc`：六边形架构或功能文件夹规则。
+- `02-testing.mdc`：在完成任务前始终运行 `pnpm test` 的指令。
+- `03-libraries.mdc`：关于强制使用哪些 UI 库（如 shadcn/ui）的指令。
 
-This progressive disclosure ensures the agent only loads the rules relevant to the files it is actively touching.
+这种渐进式披露确保代理只加载与当前活跃处理的文件相关的规则。

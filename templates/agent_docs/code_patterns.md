@@ -1,50 +1,50 @@
-# Code Patterns
+# 代码模式
 
-## Purpose
-This file defines the implementation patterns the agent should follow for this project.
-Prefer these patterns over inventing new ones. Fill in each section from the Technical Design document.
+## 目的
+此文件定义了 agent 在本项目中应遵循的实现模式。
+优先使用这些模式，而非发明新的模式。从技术设计文档中填写每个部分。
 
-## Architecture Pattern
-- **Primary pattern:** [feature-based / layered / hexagonal / MVC / service-oriented]
-- **Rule:** Keep domain logic separate from transport/UI concerns.
-- **Rule:** Reuse existing modules before creating new abstractions.
+## 架构模式
+- **主要模式：** [基于功能 / 分层 / 六边形 / MVC / 面向服务]
+- **规则：** 将领域逻辑与传输/UI 关注点分离。
+- **规则：** 在创建新的抽象之前优先复用现有模块。
 
-## Data Fetching
-- **Primary approach:** [RSC / route loaders / query library / direct server calls — use whatever the project's tech stack specifies]
-- **Rule:** Do not assume a specific library. Check `tech_stack.md` for the project's chosen approach before fetching data.
-- **Rule:** Keep fetch logic out of render functions unless the framework explicitly encourages it.
+## 数据获取
+- **主要方式：** [RSC / 路由加载器 / 查询库 / 直接服务端调用 — 使用项目技术栈指定的工具]
+- **规则：** 不要假设特定的库。在获取数据之前查看 `tech_stack.md` 了解项目选择的方式。
+- **规则：** 除非框架明确鼓励，否则不要将获取逻辑放在渲染函数中。
 
-## State Management
-- **Server state:** [tool/pattern from tech_stack.md]
-- **Client state:** [tool/pattern from tech_stack.md]
-- **Forms:** [tool/pattern from tech_stack.md]
-- **Rule:** Prefer the simplest working approach for MVP scope. Do not add a state library if the framework's built-in state is sufficient.
+## 状态管理
+- **服务端状态：** [来自 tech_stack.md 的工具/模式]
+- **客户端状态：** [来自 tech_stack.md 的工具/模式]
+- **表单：** [来自 tech_stack.md 的工具/模式]
+- **规则：** 优先为 MVP 范围使用最简单的可行方案。如果框架内置状态已足够，不要添加状态管理库。
 
-## Error Handling
-- Normalize errors at service/API boundaries — never let raw exceptions reach the UI.
-- Never swallow errors silently; always log or surface them.
-- Return user-safe messages in the UI; log developer context server-side.
-- Use a consistent error shape across all API responses.
+## 错误处理
+- 在服务/API 边界处规范化错误 — 永远不要让原始异常到达 UI。
+- 永远不要静默吞掉错误；始终记录或展示它们。
+- 在 UI 中返回对用户安全的错误信息；在服务端记录开发者上下文。
+- 在所有 API 响应中使用一致的错误结构。
 
-## Validation
-- Validate all external inputs (user forms, API payloads, environment variables).
-- Apply runtime validation at system boundaries; trust internal types inside those boundaries.
-- Keep validation rules co-located with the relevant contract (e.g., next to the API route or form schema).
+## 验证
+- 验证所有外部输入（用户表单、API 负载、环境变量）。
+- 在系统边界处应用运行时验证；在边界内信任内部类型。
+- 将验证规则与相关契约放在一起（例如，紧邻 API 路由或表单 schema）。
 
-## File and Naming Conventions
-- **Files:** [kebab-case / camelCase / framework default — match the existing project convention]
-- **Components / classes:** PascalCase
-- **Functions / variables:** camelCase
-- **Constants / env vars:** UPPER_SNAKE_CASE
+## 文件与命名约定
+- **文件：** [kebab-case / camelCase / 框架默认 — 与现有项目约定保持一致]
+- **组件 / 类：** PascalCase
+- **函数 / 变量：** camelCase
+- **常量 / 环境变量：** UPPER_SNAKE_CASE
 
-## Testing Pattern
-- Add unit tests for pure logic and utility functions.
-- Add integration tests for API contracts and critical data flows.
-- Add E2E tests only for the top user journeys the PRD marks as must-have.
-- Run the test suite after every feature; fix failures before moving on.
+## 测试模式
+- 为纯逻辑和工具函数添加单元测试。
+- 为 API 契约和关键数据流添加集成测试。
+- 仅对 PRD 中标记为必须有（must-have）的顶级用户旅程添加 E2E 测试。
+- 每个功能完成后运行测试套件；在继续之前修复失败。
 
-## Change Discipline
-- Prefer focused, minimal edits over large rewrites.
-- Do not introduce new dependencies without checking the existing stack in `tech_stack.md` first.
-- Do not change database migrations, infrastructure config, auth flows, or billing code without explicit approval.
-- One feature at a time — commit or checkpoint after each working feature.
+## 变更纪律
+- 优先进行集中、最小化的编辑，而非大规模重写。
+- 在引入新依赖之前，先在 `tech_stack.md` 中检查现有技术栈。
+- 未经明确批准，不要更改数据库迁移、基础设施配置、认证流程或计费代码。
+- 一次只做一个功能 — 每个可工作的功能后进行提交或保存检查点。

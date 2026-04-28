@@ -1,3 +1,3 @@
-# Product Requirements
+# 产品需求
 
-[Copy and paste your core requirements, user stories, and success metrics directly from your saved PRD here.]
+[在此直接复制粘贴您的核心需求、用户故事和成功指标，来源自我保存的 PRD 文档。]

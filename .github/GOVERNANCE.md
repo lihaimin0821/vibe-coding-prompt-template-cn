@@ -1,52 +1,52 @@
-# Governance
+# 治理
 
-This document describes how decisions are made for the Vibe-Coding Prompt Template.
+本文档描述了 Vibe-Coding Prompt Template 的决策方式。
 
-## Scope
+## 范围
 
-Governance applies to:
-- Workflow documents (`README.md`, `part*.md`, `docs/*`)
-- Template artifacts (`templates/*`)
-- Community health files (`.github/*`)
+治理适用于：
+- 工作流程文档（`README.md`、`part*.md`、`docs/*`）
+- 模板工件（`templates/*`）
+- 社区健康文件（`.github/*`）
 
-## Roles
+## 角色
 
-### Maintainer
-- Reviews and merges pull requests
-- Curates roadmap direction
-- Resolves disputes and final tie-break decisions
+### 维护者
+- 审查和合并 pull requests
+- 策划路线图方向
+- 解决争议和最终裁决
 
-### Contributor
-- Proposes changes through issues, discussions, and pull requests
-- Helps improve prompts, docs, examples, and workflows
+### 贡献者
+- 通过 issues、discussions 和 pull requests 提出变更
+- 帮助改进提示、文档、示例和工作流程
 
-## Decision-making model
+## 决策模型
 
-We use a pragmatic, lightweight model:
-- Small changes: maintainer discretion after normal PR review
-- Significant changes (structure, workflow contract, breaking guidance): discussed first in Discussions or an issue
-- Default approach: seek consensus, but avoid blocking progress indefinitely
+我们采用务实、轻量级的模型：
+- 小改动：维护者在正常 PR 审查后自行决定
+- 重大改动（结构、工作流程契约、破坏性指导）：先在 Discussions 或 issue 中讨论
+- 默认方式：寻求共识，但避免无限期阻塞进度
 
-## Change categories
+## 变更类别
 
-- **Editorial:** typo fixes, clarity improvements, link updates
-- **Operational:** workflow/action updates, policy docs, checklist updates
-- **Structural:** major prompt contract or template architecture changes
+- **编辑类：** 拼写修正、表述改进、链接更新
+- **操作类：** 工作流程/操作更新、策略文档、检查清单更新
+- **结构类：** 主要提示契约或模板架构变更
 
-Structural changes should include:
-- Rationale
-- Migration notes (if behavior changes)
-- Updated references in docs
+结构类变更应包含：
+- 理由
+- 迁移说明（如有行为变更）
+- 文档中的更新引用
 
-## Release and maintenance cadence
+## 发布和维护周期
 
-- Primary cadence: monthly maintenance updates
-- Urgent fixes: shipped as needed (broken links, security clarifications, major regressions)
+- 主要周期：每月维护更新
+- 紧急修复：根据需要发布（失效链接、安全澄清、重大回归）
 
-## Conduct and enforcement
+## 行为和执行
 
-Community behavior follows [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+社区行为遵循 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)。
 
-## Security and sensitive reports
+## 安全和敏感报告
 
-Security issues must follow [SECURITY.md](SECURITY.md) and should not be filed as public issues.
+安全问题必须遵循 [SECURITY.md](SECURITY.md)，不应作为公开 issue 提交。

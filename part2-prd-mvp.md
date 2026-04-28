@@ -1,908 +1,908 @@
-# Part 2 — Product Requirements Document (PRD) Generator
+# 第二部分 — 产品需求文档（PRD）生成器
 
-I'll help you create a Product Requirements Document (PRD) for your MVP. This document will define WHAT you're building, WHO it's for, and WHY it matters.
+我将帮助你为你的 MVP 创建一份产品需求文档（PRD）。这份文档将定义你要构建什么、谁是目标用户、以及为什么它很重要。
 
 <details>
-<summary><b>Before We Begin — File Upload Instructions</b></summary>
+<summary><b>开始之前 — 文件上传说明</b></summary>
 
-### If you have research from Part 1:
-Please attach your research findings in any format:
-- `.txt`, `.pdf`, `.docx`, `.md` files all work
-- Or paste the content directly if it's short
+### 如果你有第一部分的研究成果：
+请附上你的研究成果，格式不限：
+- `.txt`、`.pdf`、`.docx`、`.md` 文件均可
+- 或者如果内容较短，直接粘贴也可以
 
-### Don't have research yet?
-No problem! We can still create a great PRD. Just let me know and we'll proceed.
+### 还没有研究成果？
+没关系！我们仍然可以创建一份出色的 PRD。告诉我一声，我们就可以开始了。
 
 </details>
 
-Once you've attached the file (or indicated you don't have one), please tell me about yourself:
-- A) **Vibe-coder** — Great ideas, limited coding experience, using AI to build
-- B) **Developer** — Experienced programmer
-- C) **Somewhere in between** — Some coding knowledge, still learning
+一旦你附上文件（或说明没有文件），请介绍一下你自己：
+- A) **Vibe-coder（氛围编程者）** — 有很棒的创意，但编程经验有限，通过 AI 来构建
+- B) **开发者** — 经验丰富的程序员
+- C) **介于两者之间** — 有一些编程知识，但仍在学习中
 
-Please attach your research file (or type "no file") and type A, B, or C:
+请附上你的研究文件（或输入"无文件"）并选择 A、B 或 C：
 
 ---
 
-## Instructions for AI Assistant
+## AI 助手指南
 
 <details>
-<summary><b>Best AI Platforms for PRD Creation</b></summary>
+<summary><b>创建 PRD 的最佳 AI 平台</b></summary>
 
-### Recommended Platforms
-- **Claude** — Excels at structured document planning and consistent formatting
-- **ChatGPT** — Good for rapid iteration and user story generation
-- **Gemini** — Handles large research attachments with extensive context window
+### 推荐平台
+- **Claude** — 擅长结构化文档规划和一致的格式
+- **ChatGPT** — 适合快速迭代和用户故事生成
+- **Gemini** — 可以处理带有大量上下文窗口的大型研究附件
 
-### Choosing the Right Platform
-| Need | Best Choice | Why |
+### 选择合适的平台
+| 需求 | 最佳选择 | 原因 |
 |------|-------------|-----|
-| Structured documents | Claude | Consistent formatting, follows templates well |
-| Quick iterations | ChatGPT | Fast responses, good at brainstorming |
-| Large context (research input) | Gemini | Largest context window |
+| 结构化文档 | Claude | 格式一致，遵循模板良好 |
+| 快速迭代 | ChatGPT | 响应快速，擅长头脑风暴 |
+| 大上下文（研究输入） | Gemini | 最大的上下文窗口 |
 
-### Session Continuity
-- Continue from your Part 1 thread when possible to preserve context.
-- If a reset is unavoidable, paste a compact handoff summary before asking PRD questions.
+### 会话连续性
+- 尽可能从第一部分的线程继续，以保持上下文。
+- 如果不可避免地需要重置，在询问 PRD 问题之前粘贴一份紧凑的交接摘要。
 
-### Evergreen Naming
-- Prefer model family names in docs and examples (for example: Claude Sonnet, Claude Opus, Gemini Pro, Gemini Flash) instead of pinned version names.
+### 持久命名建议
+- 在文档和示例中优先使用模型系列名称（例如：Claude Sonnet、Claude Opus、Gemini Pro、Gemini Flash），而不是固定版本名称。
 
 </details>
 
-Wait for the user to either:
-1. Attach their research findings file, OR
-2. Indicate they don't have one
+等待用户：
+1. 附上他们的研究成果文件，或
+2. 说明他们没有文件
 
-If they attach a file, quickly scan it for:
-- Project name and core concept
-- Target users mentioned
-- Technical decisions made
-- Competitor insights
-- Budget/timeline constraints
+如果他们附上了文件，快速扫描以下内容：
+- 项目名称和核心概念
+- 提到的目标用户
+- 做出的技术决策
+- 竞争对手洞察
+- 预算/时间限制
 
-Reference these insights during the Q&A process.
+在问答过程中参考这些洞察。
 
-> **Slot-Filling Approach**: The Q&A below gathers all required context before PRD generation. Do NOT generate the PRD until all essential slots are filled. If any critical information is missing, ask follow-up questions.
+> **填空式方法**：下面的问答收集所有必需的上下文，然后才生成 PRD。在所有关键信息填写完整之前，**不要**生成 PRD。如果缺少任何关键信息，请提出后续问题。
 
-> **Format Preference**: Keep the PRD concise. Use bullet points and tables where possible, and avoid long paragraphs.
+> **格式偏好**：保持 PRD 简洁。尽可能使用要点和表格，避免冗长的段落。
 
-### Initial Questions for ALL Users:
+### 对所有用户的初始问题：
 
-**Q1:** "What's the name of your product/app? (If undecided, we can brainstorm!)"
+**Q1：** "你的产品/应用叫什么名字？（如果还没决定，我们可以一起头脑风暴！）"
 
-**Q2:** "In one sentence, what problem does it solve? (Example: 'Helps freelancers track time and invoice clients automatically')"
+**Q2：** "用一句话描述，它解决什么问题？（例如：'帮助自由职业者追踪时间并自动向客户开具发票'）"
 
-**Q3:** "What's your launch goal? (Examples: '100 users', '$1000 MRR', 'Replace my day job', 'Learn to build apps')"
+**Q3：** "你的发布目标是什么？（例如：'100 个用户'、'$1000 月收入'、'取代我的日常工作'、'学习构建应用'）"
 
-### Path A — Vibe-Coder Questions:
+### 路径 A — Vibe-Coder 问题：
 
-**Q4:** "Who will use your app? Describe them like you're explaining to a friend:
-- What do they do? (job, lifestyle)
-- What frustrates them currently?
-- How tech-savvy are they?"
+**Q4：** "谁会使用你的应用？像给朋友解释一样描述他们：
+- 他们是做什么的？（工作、生活方式）
+- 他们目前有什么烦恼？
+- 他们的技术能力如何？"
 
-**Q5:** "Tell me the user journey story:
-- Sarah has problem X...
-- She discovers your app...
-- She does Y...
-- Now she's happy because Z
-(Use your own character and story!)"
+**Q5：** "告诉我用户旅程的故事：
+- 小王遇到了问题 X...
+- 他发现了你的应用...
+- 他做了 Y...
+- 现在他很开心因为 Z
+（用你自己的角色和故事！）"
 
-**Q6:** "What are the 3-5 MUST-have features for launch? The absolute essentials only!"
+**Q6：** "发布时必须有的 3-5 个功能是什么？只列出绝对核心的功能！"
 
-**Q7:** "What features are you intentionally saving for version 2? (This keeps MVP simple)"
+**Q7：** "你打算留到第二版的功能有哪些？（这能保持 MVP 简洁）"
 
-**Q8:** "How will you know it's working? Pick 1-2 simple metrics:
-- Number of signups?
-- Daily active users?
-- Tasks completed?
-- Customer feedback score?"
+**Q8：** "你怎么知道它是否有效？选择 1-2 个简单的指标：
+- 注册人数？
+- 日活跃用户？
+- 完成的任务数？
+- 用户反馈分数？"
 
-**Q9:** "Describe the vibe in 3-5 words (Examples: 'Clean, fast, professional' or 'Fun, colorful, friendly')"
+**Q9：** "用 3-5 个词描述整体风格（例如：'简洁、快速、专业'或'有趣、色彩丰富、友好'）"
 
-**Q10:** "Any constraints or non-functional requirements? Budget limits, must launch by date, performance expectations, security/privacy, scalability, compliance, or specific platform needs?"
+**Q10：** "有什么限制或非功能性需求吗？预算限制、必须发布的日期、性能预期、安全/隐私、可扩展性、合规性，或特定平台需求？"
 
-### Path B — Developer Questions:
+### 路径 B — 开发者问题：
 
-**Q4:** "Define your target audience:
-- Primary persona (demographics, role, technical level)
-- Secondary personas (if any)
-- Jobs to be done (what they're hiring your product for)"
+**Q4：** "定义你的目标受众：
+- 主要用户画像（人口统计、角色、技术水平）
+- 次要用户画像（如有）
+- 要完成的工作（他们用你的产品来做什么）"
 
-**Q5:** "Write 3-5 user stories:
-Primary: 'As a [user type], I want to [action] so that [benefit]'
-(Add 2-4 supporting stories)"
+**Q5：** "编写 3-5 个用户故事：
+主要故事：'作为[用户类型]，我想要[行动]，以便[收益]'
+（添加 2-4 个辅助故事）"
 
-**Q6:** "List core MVP features with MoSCoW prioritization:
-- Must have: [3-5 features]
-- Should have: [2-3 features]
-- Could have: [2-3 features]
-- Won't have (this release): [list]"
+**Q6：** "列出核心 MVP 功能，使用 MoSCoW 优先级排序：
+- 必须有：[3-5 个功能]
+- 应该有：[2-3 个功能]
+- 可以有：[2-3 个功能]
+- 不会有（本次发布）：[列表]"
 
-**Q7:** "Define success metrics (be specific):
-- Activation: [metric and target]
-- Engagement: [metric and target]
-- Retention: [metric and target]
-- Revenue (if applicable): [metric and target]"
+**Q7：** "定义成功指标（要具体）：
+- 激活：[指标和目标]
+- 参与度：[指标和目标]
+- 留存：[指标和目标]
+- 收入（如适用）：[指标和目标]"
 
-**Q8:** "Technical and UX requirements:
-- Performance: [requirements]
-- Accessibility: [standards]
-- Platform support: [browsers, devices]
-- Security/Privacy: [requirements]
-- Scalability: [expectations]
-- Design system: [preferences]"
+**Q8：** "技术和 UX 需求：
+- 性能：[需求]
+- 可访问性：[标准]
+- 平台支持：[浏览器、设备]
+- 安全/隐私：[需求]
+- 可扩展性：[期望]
+- 设计系统：[偏好]"
 
-**Q9:** "Risk assessment:
-- Technical risks: [list]
-- Market risks: [list]
-- Execution risks: [list]"
+**Q9：** "风险评估：
+- 技术风险：[列表]
+- 市场风险：[列表]
+- 执行风险：[列表]"
 
-**Q10:** "Business model and constraints:
-- Monetization strategy (if any)
-- Budget constraints
-- Timeline requirements
-- Compliance/regulatory needs"
+**Q10：** "商业模式和限制：
+- 盈利策略（如有）
+- 预算限制
+- 时间线要求
+- 合规/监管需求"
 
-### Path C — In-Between Questions:
+### 路径 C — 介于两者之间的问题：
 
-**Q4:** "Who are your users and what do they need?
-- Primary user type: [describe]
-- Their main problem: [describe]
-- Current solution they use: [if any]"
+**Q4：** "你的用户是谁，他们需要什么？
+- 主要用户类型：[描述]
+- 他们的主要问题：[描述]
+- 他们目前使用的解决方案：[如有]"
 
-**Q5:** "Walk through the main user flow:
-- User arrives at app because...
-- First thing they see/do...
-- Core action they take...
-- Value they get..."
+**Q5：** "走过主要的用户流程：
+- 用户来到应用是因为...
+- 他们看到的/做的第一件事...
+- 他们采取的核心行动...
+- 他们获得的价值..."
 
-**Q6:** "What 3-5 features must be in v1? For each, explain:
-- Feature name
-- What it does
-- Why it's essential"
+**Q6：** "v1 中必须有哪 3-5 个功能？对每个功能说明：
+- 功能名称
+- 它做什么
+- 为什么它是必需的"
 
-**Q7:** "What are you NOT building yet? List features for v2 and why they can wait."
+**Q7：** "你暂时不构建什么？列出 v2 的功能及其可以等待的原因。"
 
-**Q8:** "How will you measure success?
-- Short term (1 month): [metric]
-- Medium term (3 months): [metric]"
+**Q8：** "你如何衡量成功？
+- 短期（1 个月）：[指标]
+- 中期（3 个月）：[指标]"
 
-**Q9:** "Design and user experience:
-- Visual style: [describe]
-- Key screens: [list main ones]
-- Mobile responsive? [yes/no/mobile-first]"
+**Q9：** "设计和用户体验：
+- 视觉风格：[描述]
+- 关键屏幕：[列出主要的]
+- 移动端适配？[是/否/移动优先]"
 
-**Q10:** "Constraints and requirements:
-- Budget for tools/services: [$X/month]
-- Timeline: [launch date]
-- Non-functional requirements: [performance, security/privacy, scalability, compliance]
-- Any technical preferences from research?"
-
----
-
-## Step 1: Verification Echo (Required)
-
-After completing ALL questions, summarize your understanding back to the user:
-
-**Template:**
-> "Let me confirm I understand your product correctly:
->
-> **Product:** [Name] — [One-line description]
-> **Target User:** [Primary persona description]
-> **Problem:** [Core problem being solved]
-> **Must-Have Features:**
-> 1. [Feature 1]
-> 2. [Feature 2]
-> 3. [Feature 3]
-> **Success Metric:** [Primary metric and target]
-> **Timeline:** [Launch target]
-> **Budget:** [Constraints]
->
-> Is this accurate? Should I adjust anything before creating your PRD?"
-
-Wait for user confirmation. If they correct anything, update your understanding before proceeding.
+**Q10：** "限制和要求：
+- 工具/服务的预算：[$/月]
+- 时间线：[发布日期]
+- 非功能性需求：[性能、安全/隐私、可扩展性、合规性]
+- 研究中是否有特定的技术偏好？"
 
 ---
 
-## Step 2: Generate PRD Document
+## 步骤 1：验证回显（必需）
 
-After verification, create a PRD appropriate to their level:
+完成所有问题后，将你的理解总结给用户：
 
-### For Vibe-Coders — PRD-[AppName]-MVP.md:
+**模板：**
+> "让我确认我正确理解了你的产品：
+>
+> **产品：** [名称] — [一句话描述]
+> **目标用户：** [主要用户画像描述]
+> **问题：** [正在解决的核心问题]
+> **必须有功能：**
+> 1. [功能 1]
+> 2. [功能 2]
+> 3. [功能 3]
+> **成功指标：** [主要指标和目标]
+> **时间线：** [发布目标]
+> **预算：** [限制]
+>
+> 这准确吗？在创建 PRD 之前，我需要调整什么吗？"
+
+等待用户确认。如果他们纠正了什么，在继续之前更新你的理解。
+
+---
+
+## 步骤 2：生成 PRD 文档
+
+验证后，根据他们的水平创建合适的 PRD：
+
+### 针对 Vibe-Coder — PRD-[应用名]-MVP.md：
 
 ```markdown
-# Product Requirements Document: [App Name] MVP
+# 产品需求文档：[应用名称] MVP
 
-## Product Overview
+## 产品概述
 
-**App Name:** [Name]
-**Tagline:** [Their one-liner in catchier form]
-**Launch Goal:** [What success looks like]
-**Target Launch:** [Date if provided, otherwise "6-8 weeks"]
+**应用名称：** [名称]
+**标语：** [用更吸引人的方式表达他们的一句话描述]
+**发布目标：** [成功的定义]
+**目标发布：** [如提供日期，否则为"6-8 周"]
 
-## Who It's For
+## 目标用户
 
-### Primary User: [Persona Name]
-[User description in conversational language]
+### 主要用户：[用户画像名称]
+[用对话语言描述用户]
 
-**Their Current Pain:**
-- [Pain point 1]
-- [Pain point 2]
-- [Pain point 3]
+**他们目前的痛点：**
+- [痛点 1]
+- [痛点 2]
+- [痛点 3]
 
-**What They Need:**
-- [Need 1]
-- [Need 2]
-- [Need 3]
+**他们需要什么：**
+- [需求 1]
+- [需求 2]
+- [需求 3]
 
-### Example User Story
-"Meet [persona name], a [description] who struggles with [problem]. Every day they [current situation]. They need [solution] so they can [desired outcome]."
+### 示例用户故事
+"[用户画像名称] 是一位[描述]，正在为[问题]而苦恼。每天他都[目前的情况]。他需要[解决方案]，这样他才能[期望的结果]。"
 
-## The Problem We're Solving
+## 我们要解决的问题
 
-[Expand on their problem statement with context, why it matters, and why now is the right time to solve it]
+[基于他们的问题陈述扩展背景，说明为什么重要，以及为什么现在解决问题的时机合适]
 
-**Why Existing Solutions Fall Short:**
-- [Competitor/current solution]: [Why it's not enough]
-- [Competitor/current solution]: [Why it's not enough]
+**为什么现有解决方案不够：**
+- [竞争对手/现有解决方案]：[为什么不够]
+- [竞争对手/现有解决方案]：[为什么不够]
 
-## User Journey
+## 用户旅程
 
-### Discovery → First Use → Success
+### 发现 → 首次使用 → 成功
 
-1. **Discovery Phase**
-   - How they find us: [channels]
-   - What catches their attention: [hook]
-   - Decision trigger: [what makes them try]
+1. **发现阶段**
+   - 他们如何找到我们：[渠道]
+   - 什么吸引他们的注意：[钩子]
+   - 决策触发点：[让他们尝试的因素]
 
-2. **Onboarding (First 5 Minutes)**
-   - Land on: [first screen/page]
-   - First action: [what they do]
-   - Quick win: [immediate value]
+2. **引导流程（前 5 分钟）**
+   - 落地页：[第一个屏幕/页面]
+   - 第一个行动：[他们做什么]
+   - 快速成功：[即时价值]
 
-3. **Core Usage Loop**
-   - Trigger: [what brings them back]
-   - Action: [what they do]
-   - Reward: [what they get]
-   - Investment: [what keeps them]
+3. **核心使用循环**
+   - 触发：[什么让他们回来]
+   - 行动：[他们做什么]
+   - 奖励：[他们得到什么]
+   - 投入：[什么留住他们]
 
-4. **Success Moment**
-   - "Aha!" moment: [when they get it]
-   - Share trigger: [what makes them tell others]
+4. **成功时刻**
+   - "顿悟"时刻：[他们理解的时候]
+   - 分享触发点：[什么让他们告诉别人]
 
-## MVP Features
+## MVP 功能
 
-### Must Have for Launch
+### 发布必须有的功能
 
-#### 1. [Feature Name]
-- **What:** [Simple description]
-- **User Story:** As a [user], I want to [action] so that [benefit]
-- **Success Criteria:**
-  - [ ] [Specific measurable outcome]
-  - [ ] [Specific measurable outcome]
-- **Priority:** P0 (Critical)
+#### 1. [功能名称]
+- **功能描述：** [简单描述]
+- **用户故事：** 作为[用户]，我想要[行动]，以便[收益]
+- **成功标准：**
+  - [ ] [具体可衡量的结果]
+  - [ ] [具体可衡量的结果]
+- **优先级：** P0（关键）
 
-#### 2. [Feature Name]
-- **What:** [Description]
-- **User Story:** [Story]
-- **Success Criteria:**
-  - [ ] [Criteria]
-  - [ ] [Criteria]
-- **Priority:** P0 (Critical)
+#### 2. [功能名称]
+- **功能描述：** [描述]
+- **用户故事：** [故事]
+- **成功标准：**
+  - [ ] [标准]
+  - [ ] [标准]
+- **优先级：** P0（关键）
 
-[Continue for all must-have features]
+[为所有必须有功能继续]
 
-### Nice to Have (If Time Allows)
-- **[Feature]**: [Quick description]
-- **[Feature]**: [Quick description]
+### 如果时间允许可以有的功能
+- **[功能]**：[简要描述]
+- **[功能]**：[简要描述]
 
-### NOT in MVP (Saving for Later)
-- **[Feature]**: Will add after [trigger/milestone]
-- **[Feature]**: Will add after [trigger/milestone]
-- **[Feature]**: Will add after [trigger/milestone]
+### MVP 中不包括（留待以后）
+- **[功能]**：[触发条件/里程碑后添加]
+- **[功能]**：[触发条件/里程碑后添加]
+- **[功能]**：[触发条件/里程碑后添加]
 
-*Why we're waiting: Keeps MVP focused and launchable in [timeframe]*
+*我们等待的原因：保持 MVP 专注和可发布在[时间范围]内*
 
-## How We'll Know It's Working
+## 我们如何知道它是否有效
 
-### Launch Success Metrics (First 30 Days)
-| Metric | Target | Measure |
+### 发布成功指标（最初 30 天）
+| 指标 | 目标 | 测量方式 |
 |--------|--------|---------|
-| [Metric name] | [Target number] | [How to measure] |
-| [Metric name] | [Target number] | [How to measure] |
+| [指标名称] | [目标数字] | [如何测量] |
+| [指标名称] | [目标数字] | [如何测量] |
 
-### Growth Metrics (Months 2-3)
-| Metric | Target | Measure |
+### 增长指标（第 2-3 个月）
+| 指标 | 目标 | 测量方式 |
 |--------|--------|---------|
-| [Metric name] | [Target number] | [How to measure] |
+| [指标名称] | [目标数字] | [如何测量] |
 
-## Look & Feel
+## 外观与感觉
 
-**Design Vibe:** [Their 3-5 words]
+**设计风格：** [他们的 3-5 个词]
 
-**Visual Principles:**
-1. [Principle based on their description]
-2. [Principle based on their description]
-3. [Principle based on their description]
+**视觉原则：**
+1. [基于他们描述的原则]
+2. [基于他们描述的原则]
+3. [基于他们描述的原则]
 
-**Key Screens/Pages:**
-1. **[Screen name]**: [Purpose]
-2. **[Screen name]**: [Purpose]
-3. **[Screen name]**: [Purpose]
+**关键屏幕/页面：**
+1. **[屏幕名称]**：[用途]
+2. **[屏幕名称]**：[用途]
+3. **[屏幕名称]**：[用途]
 
-### Simple Wireframe
+### 简单线框图
 ```
-[Main Screen/Homepage]
+[主屏幕/首页]
 ┌─────────────────────────┐
-│     [Header/Logo]       │
+│     [标题/标志]         │
 ├─────────────────────────┤
 │                         │
-│   [Hero/Main Action]    │
+│   [英雄区域/主要行动]    │
 │                         │
 ├─────────────────────────┤
-│ [Feature 1] [Feature 2] │
+│ [功能 1] [功能 2]       │
 ├─────────────────────────┤
-│     [Secondary CTA]     │
+│     [次要行动号召]       │
 └─────────────────────────┘
 ```
 
-## Technical Considerations
+## 技术考虑
 
-**Platform:** [Web/Mobile/Both]
-**Responsive:** [Yes, mobile-first]
-**Performance:** Page load < 3 seconds
-**Accessibility:** WCAG 2.1 AA minimum
-**Security/Privacy:** [Basic requirements, data sensitivity]
-**Scalability:** [Expected user growth or constraints]
+**平台：** [网页/移动端/两者]
+**响应式：** [是，移动优先]
+**性能：** 页面加载 < 3 秒
+**可访问性：** WCAG 2.1 AA 最低标准
+**安全/隐私：** [基本要求，数据敏感性]
+**可扩展性：** [预期的用户增长或限制]
 
-## Quality Standards
+## 质量标准
 
-**What This App Will NOT Accept:**
-- Placeholder content in production ("Lorem ipsum", sample images)
-- Broken features — everything listed works or isn't included
-- Skipping mobile testing before launch
-- Ignoring accessibility basics
+**这个应用不能接受的：**
+- 生产环境中的占位符内容（"Lorem ipsum"、示例图片）
+- 无法工作的功能 — 列出的功能要么正常工作，要么就不包含
+- 发布前跳过移动端测试
+- 忽略可访问性基础知识
 
-*These standards will be enforced by the AI coding assistant.*
+*AI 编程助手将执行这些标准。*
 
-## Budget & Constraints
+## 预算与限制
 
-**Development Budget:** [$X or "Minimal — using free/cheap tools"]
-**Monthly Operating:** [$X estimated]
-**Timeline:** [X weeks to launch]
-**Team:** [Solo/team size]
+**开发预算：** [$X 或"最少 — 使用免费/便宜的工具"]
+**每月运营：** [$X 预计]
+**时间线：** [到发布 X 周]
+**团队：** [单人/团队规模]
 
-## Open Questions & Assumptions
-- [Open question]
-- [Key assumption]
+## 待解决问题与假设
+- [待解决问题]
+- [关键假设]
 
-## Launch Strategy (Brief)
+## 发布策略（简要）
 
-**Soft Launch:** [Approach]
-**Target Users:** [How many]
-**Feedback Plan:** [How to collect]
-**Iteration Cycle:** [How often to update]
+**软发布：** [方法]
+**目标用户：** [多少]
+**反馈计划：** [如何收集]
+**迭代周期：** [更新频率]
 
-## Definition of Done for MVP
+## MVP 完成定义
 
-The MVP is ready to launch when:
-- [ ] All P0 features are functional
-- [ ] Basic error handling works
-- [ ] It works on mobile and desktop
-- [ ] One complete user journey works end-to-end
-- [ ] Basic analytics are tracking
-- [ ] Friends/family test is complete
-- [ ] Deployment is automated
+MVP 已准备好发布，当：
+- [ ] 所有 P0 功能都可正常工作
+- [ ] 基本错误处理有效
+- [ ] 移动端和桌面端都能工作
+- [ ] 一个完整的用户旅程端到端可用
+- [ ] 基本分析已配置追踪
+- [ ] 朋友/家人测试完成
+- [ ] 部署已自动化
 
-## Next Steps
+## 下一步
 
-After this PRD is approved:
-1. Create Technical Design Document (Part 3)
-2. Set up development environment
-3. Build MVP with AI assistance
-4. Test with 5-10 beta users
-5. Launch!
+此 PRD 批准后：
+1. 创建技术设计文档（第三部分）
+2. 设置开发环境
+3. 在 AI 协助下构建 MVP
+4. 与 5-10 个测试用户测试
+5. 发布！
 
 ---
-*Document created: [Date]*
-*Status: Draft — Ready for Technical Design*
+*文档创建日期：[日期]*
+*状态：草稿 — 准备技术设计*
 ```
 
-### For Developers — PRD-[AppName]-MVP.md:
+### 针对开发者 — PRD-[应用名]-MVP.md：
 
 ```markdown
-# Product Requirements Document: [App Name] MVP
+# 产品需求文档：[应用名称] MVP
 
-## Executive Summary
+## 执行摘要
 
-**Product:** [Name]
-**Version:** MVP (1.0)
-**Document Status:** [Draft/Final]
-**Last Updated:** [Date]
+**产品：** [名称]
+**版本：** MVP (1.0)
+**文档状态：** [草稿/最终]
+**最后更新：** [日期]
 
-### Product Vision
-[Expanded vision statement based on their input]
+### 产品愿景
+[基于他们输入的扩展愿景陈述]
 
-### Success Criteria
-[High-level success metrics and targets]
+### 成功标准
+[高层成功指标和目标]
 
-## Problem Statement
+## 问题陈述
 
-### Problem Definition
-[Detailed problem analysis with market context]
+### 问题定义
+[详细问题分析，包含市场背景]
 
-### Impact Analysis
-- **User Impact:** [Quantified where possible]
-- **Market Impact:** [Size and opportunity]
-- **Business Impact:** [Revenue/growth potential]
+### 影响分析
+- **用户影响：** [尽可能量化]
+- **市场影响：** [规模和机会]
+- **业务影响：** [收入/增长潜力]
 
-## Target Audience
+## 目标受众
 
-### Primary Persona: [Name]
-**Demographics:**
-- [Age, location, income, etc.]
+### 主要用户画像：[名称]
+**人口统计：**
+- [年龄、地点、收入等]
 
-**Psychographics:**
-- [Behaviors, preferences, values]
+**心理统计：**
+- [行为、偏好、价值观]
 
-**Jobs to Be Done:**
-1. [Functional job]
-2. [Emotional job]
-3. [Social job]
+**待完成的工作：**
+1. [功能性工作]
+2. [情感性工作]
+3. [社交性工作]
 
-**Current Solutions & Pain Points:**
-| Current Solution | Pain Points | Our Advantage |
+**当前解决方案与痛点：**
+| 当前解决方案 | 痛点 | 我们的优势 |
 |-----------------|-------------|---------------|
-| [Solution] | [Problems] | [How we're better] |
+| [解决方案] | [问题] | [我们如何更好] |
 
-### Secondary Personas
-[If applicable, brief descriptions]
+### 次要用户画像
+[如适用，简短描述]
 
-## User Stories
+## 用户故事
 
-### Epic: [Core Epic Name]
+### 史诗：[核心史诗名称]
 
-**Primary User Story:**
-"As a [user type], I want to [action] so that [benefit]"
+**主要用户故事：**
+"作为[用户类型]，我想要[行动]，以便[收益]"
 
-**Acceptance Criteria:**
-- [ ] [Specific criterion]
-- [ ] [Specific criterion]
-- [ ] [Specific criterion]
+**验收标准：**
+- [ ] [具体标准]
+- [ ] [具体标准]
+- [ ] [具体标准]
 
-### Supporting User Stories
-1. "As a [user], I want to [action] so that [benefit]"
-   - AC: [Criteria]
-2. "As a [user], I want to [action] so that [benefit]"
-   - AC: [Criteria]
+### 辅助用户故事
+1. "作为[用户]，我想要[行动]，以便[收益]"
+   - 验收标准：[标准]
+2. "作为[用户]，我想要[行动]，以便[收益]"
+   - 验收标准：[标准]
 
-[Continue for all stories]
+[为所有故事继续]
 
-## Functional Requirements
+## 功能需求
 
-### Core Features (MVP — P0)
+### 核心功能（MVP — P0）
 
-#### Feature 1: [Name]
-- **Description:** [Detailed description]
-- **User Value:** [Why users need this]
-- **Business Value:** [Why business needs this]
-- **Acceptance Criteria:**
-  - [ ] [Specific measurable criterion]
-  - [ ] [Specific measurable criterion]
-- **Dependencies:** [Technical or business dependencies]
-- **Estimated Effort:** [T-shirt size or points]
+#### 功能 1：[名称]
+- **描述：** [详细描述]
+- **用户价值：** [为什么用户需要这个]
+- **业务价值：** [为什么业务需要这个]
+- **验收标准：**
+  - [ ] [具体可衡量的标准]
+  - [ ] [具体可衡量的标准]
+- **依赖项：** [技术或业务依赖项]
+- **估计工作量：** [T恤尺寸或点数]
 
-[Repeat for all P0 features]
+[为所有 P0 功能重复]
 
-### Should Have (P1)
-[Brief list with rationale for post-MVP]
+### 应该有（P1）
+[简要列表，说明版本后添加的理由]
 
-### Could Have (P2)
-[Brief list with rationale]
+### 可以有（P2）
+[简要列表及理由]
 
-### Out of Scope (Won't Have)
-- [Feature]: [Why excluded]
-- [Feature]: [Why excluded]
+### 超出范围（不会有）
+- [功能]：[排除原因]
+- [功能]：[排除原因]
 
-## Non-Functional Requirements
+## 非功能需求
 
-### Performance
-- **Page Load:** < 2 seconds (p95)
-- **API Response:** < 200ms (p95)
-- **Concurrent Users:** Support 1,000
-- **Uptime:** 99.9% availability
+### 性能
+- **页面加载：** < 2 秒（p95）
+- **API 响应：** < 200ms（p95）
+- **并发用户：** 支持 1,000
+- **正常运行时间：** 99.9% 可用性
 
-### Security
-- **Authentication:** [Method]
-- **Authorization:** [RBAC/ACL approach]
-- **Data Protection:** [Encryption standards]
-- **Compliance:** [GDPR/CCPA/etc.]
+### 安全
+- **认证：** [方法]
+- **授权：** [RBAC/ACL 方法]
+- **数据保护：** [加密标准]
+- **合规性：** [GDPR/CCPA 等]
 
-### Usability
-- **Accessibility:** WCAG 2.1 AA
-- **Browser Support:** Chrome, Safari, Firefox, Edge (latest 2 versions)
-- **Mobile Support:** Responsive design, iOS 14+, Android 10+
-- **Internationalization:** [If applicable]
+### 可用性
+- **可访问性：** WCAG 2.1 AA
+- **浏览器支持：** Chrome、Safari、Firefox、Edge（最近 2 个版本）
+- **移动支持：** 响应式设计、iOS 14+、Android 10+
+- **国际化：** [如适用]
 
-### Scalability
-- **User Growth:** Support 10x growth without architecture change
-- **Data Growth:** [Expectations]
-- **Geographic Distribution:** [Requirements]
+### 可扩展性
+- **用户增长：** 支持 10 倍增长无需架构变更
+- **数据增长：** [期望]
+- **地理分布：** [需求]
 
-## Quality Standards (Anti-Vibe Rules)
+## 质量标准（反氛围规则）
 
-### Code Quality Requirements
-- **Type Safety:** Strict TypeScript, no `any` types allowed
-- **Architecture:** Thin controllers — logic in services only
-- **Error Handling:** Explicit error types, no swallowed exceptions
-- **Testing:** 80% coverage minimum on critical paths
+### 代码质量要求
+- **类型安全：** 严格 TypeScript，不允许任何 `any` 类型
+- **架构：** 薄控制器 — 逻辑只在服务层
+- **错误处理：** 显式错误类型，不吞没异常
+- **测试：** 关键路径至少 80% 覆盖率
 
-### Design Quality Requirements
-- **Design System:** Use design tokens only — no raw hex/pixel values
-- **Accessibility:** WCAG 2.1 AA verified
-- **Performance:** Core Web Vitals in green zone
+### 设计质量要求
+- **设计系统：** 仅使用设计令牌 — 不使用原始十六进制/像素值
+- **可访问性：** WCAG 2.1 AA 验证
+- **性能：** Core Web Vitals 处于绿色区域
 
-### What This Project Will NOT Accept
-- Placeholder content in production
-- Features outside current phase scope
-- Skipped tests for "simple" changes
-- Deprecated libraries when modern alternatives exist
+### 本项目不接受的内容
+- 生产环境中的占位符内容
+- 当前阶段范围之外的功能
+- 为"简单"变更跳过测试
+- 当存在现代替代方案时使用已弃用的库
 
-## UI/UX Requirements
+## UI/UX 需求
 
-### Design Principles
-1. [Principle with explanation]
-2. [Principle with explanation]
-3. [Principle with explanation]
+### 设计原则
+1. [带解释的原则]
+2. [带解释的原则]
+3. [带解释的原则]
 
-### Information Architecture
+### 信息架构
 ```
-├── Landing Page
-├── Authentication
-│   ├── Sign Up
-│   ├── Sign In
-│   └── Password Reset
-├── Dashboard
-│   ├── [Section]
-│   └── [Section]
-├── [Core Feature Area]
-│   ├── [Sub-feature]
-│   └── [Sub-feature]
-└── Settings/Profile
+├── 落地页
+├── 身份验证
+│   ├── 注册
+│   ├── 登录
+│   └── 密码重置
+├── 仪表盘
+│   ├── [部分]
+│   └── [部分]
+├── [核心功能区域]
+│   ├── [子功能]
+│   └── [子功能]
+└── 设置/个人资料
 ```
 
-### Key User Flows
+### 关键用户流程
 
-#### Flow 1: [Name]
+#### 流程 1：[名称]
 ```mermaid
 graph LR
-    A[Entry Point] --> B[Action 1]
-    B --> C{Decision}
-    C -->|Yes| D[Action 2]
-    C -->|No| E[Alternative]
-    D --> F[Success State]
+    A[入口点] --> B[行动 1]
+    B --> C{决策}
+    C -->|是| D[行动 2]
+    C -->|否| E[替代方案]
+    D --> F[成功状态]
 ```
 
-[Include 2-3 critical flows]
+[包含 2-3 个关键流程]
 
-## Success Metrics
+## 成功指标
 
-### North Star Metric
-[Single most important metric]
+### 北极星指标
+[单一最重要的指标]
 
-### OKRs for MVP (First 90 Days)
+### MVP 的 OKR（前 90 天）
 
-**Objective 1:** [Objective]
-- KR1: [Measurable result]
-- KR2: [Measurable result]
-- KR3: [Measurable result]
+**目标 1：** [目标]
+- 关键结果 1：[可衡量的结果]
+- 关键结果 2：[可衡量的结果]
+- 关键结果 3：[可衡量的结果]
 
-### Metrics Framework
-| Category | Metric | Target | Measurement |
+### 指标框架
+| 类别 | 指标 | 目标 | 测量方式 |
 |----------|--------|--------|-------------|
-| Acquisition | [Metric] | [Target] | [Tool/Method] |
-| Activation | [Metric] | [Target] | [Tool/Method] |
-| Retention | [Metric] | [Target] | [Tool/Method] |
-| Revenue | [Metric] | [Target] | [Tool/Method] |
-| Referral | [Metric] | [Target] | [Tool/Method] |
+| 获取 | [指标] | [目标] | [工具/方法] |
+| 激活 | [指标] | [目标] | [工具/方法] |
+| 留存 | [指标] | [目标] | [工具/方法] |
+| 收入 | [指标] | [目标] | [工具/方法] |
+| 推荐 | [指标] | [目标] | [工具/方法] |
 
-## Constraints & Assumptions
+## 限制与假设
 
-### Constraints
-- **Budget:** [Amount]
-- **Timeline:** [Launch date]
-- **Resources:** [Team size/composition]
-- **Technical:** [Platform/framework constraints]
+### 限制
+- **预算：** [金额]
+- **时间线：** [发布日期]
+- **资源：** [团队规模/组成]
+- **技术：** [平台/框架限制]
 
-### Assumptions
-- [Assumption about users]
-- [Assumption about market]
-- [Assumption about technology]
+### 假设
+- [关于用户的假设]
+- [关于市场的假设]
+- [关于技术的假设]
 
-### Open Questions
-- [Open question]
-- [Open question]
+### 待解决问题
+- [待解决问题]
+- [待解决问题]
 
-### Dependencies
-- [External dependency]
-- [Internal dependency]
+### 依赖项
+- [外部依赖]
+- [内部依赖]
 
-## Risk Assessment
+## 风险评估
 
-| Risk | Probability | Impact | Mitigation |
+| 风险 | 可能性 | 影响 | 缓解策略 |
 |------|------------|--------|------------|
-| [Risk description] | High/Med/Low | High/Med/Low | [Strategy] |
+| [风险描述] | 高/中/低 | 高/中/低 | [策略] |
 
-## MVP Definition of Done
+## MVP 完成定义
 
-### Feature Complete
-- [ ] All P0 features implemented
-- [ ] All acceptance criteria met
-- [ ] Code review completed
+### 功能完成
+- [ ] 所有 P0 功能已实现
+- [ ] 所有验收标准已满足
+- [ ] 代码审查完成
 
-### Quality Assurance
-- [ ] Unit test coverage > 80%
-- [ ] Integration tests passing
-- [ ] Manual testing completed
-- [ ] Performance benchmarks met
+### 质量保证
+- [ ] 单元测试覆盖率 > 80%
+- [ ] 集成测试通过
+- [ ] 手动测试完成
+- [ ] 性能基准达标
 
-### Documentation
-- [ ] API documentation complete
-- [ ] User documentation drafted
-- [ ] Deployment guide created
+### 文档
+- [ ] API 文档完成
+- [ ] 用户文档起草
+- [ ] 部署指南已创建
 
-### Release Ready
-- [ ] Staging environment validated
-- [ ] Monitoring/alerting configured
-- [ ] Rollback plan documented
-- [ ] Launch communication prepared
+### 发布就绪
+- [ ] 预发布环境已验证
+- [ ] 监控/警报已配置
+- [ ] 回滚计划已记录
+- [ ] 发布沟通已准备
 
-## Appendices
+## 附录
 
-### A. Competitive Analysis
-[Summary from research]
+### A. 竞争分析
+[研究摘要]
 
-### B. Technical Specifications
-[Link to Technical Design Document]
+### B. 技术规格
+[技术设计文档链接]
 
-### C. Mockups/Wireframes
-[Links or embedded images]
+### C. 模拟图/线框图
+[链接或嵌入图片]
 
 ---
-*PRD Version: 1.0*
-*Next Review: [Date]*
-*Owner: [Name]*
-*Stakeholders: [List]*
+*PRD 版本：1.0*
+*下次审核：[日期]*
+*负责人：[姓名]*
+*相关方：[列表]*
 ```
 
-### For In-Between Users — PRD-[AppName]-MVP.md:
+### 针对介于两者之间用户 — PRD-[应用名]-MVP.md：
 
 ```markdown
-# Product Requirements Document: [App Name] MVP
+# 产品需求文档：[应用名称] MVP
 
-## Overview
+## 概述
 
-**Product Name:** [Name]
-**Problem Statement:** [Expanded from their input]
-**MVP Goal:** [Clear, measurable objective]
-**Target Launch:** [Timeframe]
+**产品名称：** [名称]
+**问题陈述：** [基于他们输入扩展]
+**MVP 目标：** [清晰、可衡量的目标]
+**目标发布：** [时间范围]
 
-## Target Users
+## 目标用户
 
-### Primary User Profile
-**Who:** [User description]
-**Problem:** [What they struggle with]
-**Current Solution:** [What they use now]
-**Why They'll Switch:** [Your unique value]
+### 主要用户档案
+**用户：** [用户描述]
+**问题：** [他们苦恼什么]
+**当前解决方案：** [他们现在用什么]
+**为什么他们会转换：** [你的独特价值]
 
-### User Persona: [Name]
-- **Demographics:** [Age range, location, profession]
-- **Tech Level:** [Beginner/Intermediate/Advanced]
-- **Goals:** [What they want to achieve]
-- **Frustrations:** [Current pain points]
+### 用户画像：[名称]
+- **人口统计：** [年龄范围、地点、职业]
+- **技术水平：** [初级/中级/高级]
+- **目标：** [他们想实现什么]
+- **烦恼：** [当前痛点]
 
-## User Journey
+## 用户旅程
 
-### The Story
-[Step-by-step narrative of user journey through the app]
+### 故事
+[用户通过应用旅程的分步叙述]
 
-### Key Touchpoints
-1. **Discovery:** [How they find you]
-2. **First Contact:** [Landing page/app store]
-3. **Onboarding:** [First experience]
-4. **Core Loop:** [Regular usage]
-5. **Retention:** [What brings them back]
+### 关键触点
+1. **发现：** [他们如何找到你]
+2. **首次接触：** [落地页/应用商店]
+3. **引导：** [首次体验]
+4. **核心循环：** [常规使用]
+5. **留存：** [什么让他们回来]
 
-## MVP Features
+## MVP 功能
 
-### Core Features (Must Have)
+### 核心功能（必须有）
 
-#### 1. [Feature Name]
-- **Description:** [What it does]
-- **User Value:** [Why users need it]
-- **Success Criteria:**
-  - Users can [action]
-  - System [behavior]
-  - Data is [state]
-- **Priority:** Critical
+#### 1. [功能名称]
+- **描述：** [它做什么]
+- **用户价值：** [为什么用户需要它]
+- **成功标准：**
+  - 用户可以[行动]
+  - 系统[行为]
+  - 数据是[状态]
+- **优先级：** 关键
 
-#### 2. [Feature Name]
-[Same structure]
+#### 2. [功能名称]
+[相同结构]
 
-[Continue for 3-5 core features]
+[为 3-5 个核心功能继续]
 
-### Future Features (Not in MVP)
-| Feature | Why Wait | Planned For |
+### 未来功能（不在 MVP 中）
+| 功能 | 为什么等待 | 计划版本 |
 |---------|----------|-------------|
-| [Feature] | [Reason] | Version 2 |
-| [Feature] | [Reason] | Version 2 |
+| [功能] | [原因] | 版本 2 |
+| [功能] | [原因] | 版本 2 |
 
-## Success Metrics
+## 成功指标
 
-### Primary Metrics
-1. **[Metric Name]:** [Target] by [Date]
-   - How to measure: [Method]
-   - Why it matters: [Reasoning]
+### 主要指标
+1. **[指标名称]：** [目标] 截止 [日期]
+   - 如何测量：[方法]
+   - 为什么重要：[理由]
 
-2. **[Metric Name]:** [Target] by [Date]
-   - How to measure: [Method]
-   - Why it matters: [Reasoning]
+2. **[指标名称]：** [目标] 截止 [日期]
+   - 如何测量：[方法]
+   - 为什么重要：[理由]
 
-### Secondary Metrics
-- [Metric]: [Target]
-- [Metric]: [Target]
+### 次要指标
+- [指标]：[目标]
+- [指标]：[目标]
 
-## UI/UX Direction
+## UI/UX 方向
 
-**Design Feel:** [Their descriptive words]
-**Inspiration:** [Similar apps/sites they like]
+**设计感觉：** [他们的描述性词汇]
+**灵感来源：** [他们喜欢的类似应用/网站]
 
-### Key Screens
-1. **[Screen Name]**
-   - Purpose: [What it does]
-   - Key Elements: [What's on it]
-   - User Actions: [What users can do]
+### 关键屏幕
+1. **[屏幕名称]**
+   - 用途：[它做什么]
+   - 关键元素：[上面有什么]
+   - 用户操作：[用户可以做什么]
 
-2. **[Screen Name]**
-   [Same structure]
+2. **[屏幕名称]**
+   [相同结构]
 
-### Design Principles
-- [Principle 1]: [How it applies]
-- [Principle 2]: [How it applies]
-- [Principle 3]: [How it applies]
+### 设计原则
+- [原则 1]：[如何应用]
+- [原则 2]：[如何应用]
+- [原则 3]：[如何应用]
 
-## Technical Considerations
+## 技术考虑
 
-**Platform:** [Web/Mobile/Both]
-**Responsive:** [Yes/No/Mobile-first]
-**Performance Goals:**
-- Load time: < 3 seconds
-- Smooth animations (60fps)
-- Works on 3-year-old devices
+**平台：** [网页/移动端/两者]
+**响应式：** [是/否/移动优先]
+**性能目标：**
+- 加载时间：< 3 秒
+- 流畅动画（60fps）
+- 在 3 年前的设备上工作
 
-**Security/Privacy:** [Data sensitivity, auth requirements]
-**Scalability:** [Expected user growth or constraints]
+**安全/隐私：** [数据敏感性、认证要求]
+**可扩展性：** [预期的用户增长或限制]
 
-**Browser/Device Support:**
-- Chrome, Safari, Firefox (latest)
-- iOS 14+, Android 10+
-- Tablet optimized: [Yes/No]
+**浏览器/设备支持：**
+- Chrome、Safari、Firefox（最新版本）
+- iOS 14+、Android 10+
+- 平板优化：[是/否]
 
-## Constraints & Requirements
+## 限制与要求
 
-### Budget
-- Development tools: $[X]/month
-- Hosting/Infrastructure: $[X]/month
-- Third-party services: $[X]/month
-- **Total:** $[X]/month
+### 预算
+- 开发工具：$[X]/月
+- 托管/基础设施：$[X]/月
+- 第三方服务：$[X]/月
+- **总计：** $[X]/月
 
-### Timeline
-- MVP Development: [X weeks]
-- Beta Testing: [X weeks]
-- Launch Target: [Date]
+### 时间线
+- MVP 开发：[X 周]
+- 测试：[X 周]
+- 发布目标：[日期]
 
-### Technical Constraints
-- [Any specific requirements]
-- [Platform limitations]
-- [Integration needs]
+### 技术限制
+- [任何特定要求]
+- [平台限制]
+- [集成需求]
 
-## Open Questions & Assumptions
-- [Open question]
-- [Key assumption]
+## 待解决问题与假设
+- [待解决问题]
+- [关键假设]
 
-## Quality Standards
+## 质量标准
 
-**Code Quality:**
-- Use TypeScript when possible — it catches errors early
-- Handle errors explicitly — don't hide them
-- Test the important paths before launch
+**代码质量：**
+- 尽可能使用 TypeScript — 它能及早发现错误
+- 显式处理错误 — 不要隐藏它们
+- 发布前测试重要路径
 
-**Design Quality:**
-- Use consistent colors and spacing (design tokens)
-- Test on mobile before desktop
-- Check accessibility basics (contrast, labels)
+**设计质量：**
+- 使用一致的配色和间距（设计令牌）
+- 在桌面端之前先在移动端测试
+- 检查可访问性基础知识（对比度、标签）
 
-**What This Project Will NOT Accept:**
-- Placeholder content ("Lorem ipsum") at launch
-- Features that half-work — complete or cut
-- Skipping mobile testing
+**本项目不接受的内容：**
+- 发布时有占位符内容（"Lorem ipsum"）
+- 半生不熟的功能 — 要么完成要么砍掉
+- 跳过移动端测试
 
-## Risk Mitigation
+## 风险缓解
 
-| Risk | Impact | Mitigation Strategy |
+| 风险 | 影响 | 缓解策略 |
 |------|--------|-------------------|
-| [Risk] | [High/Med/Low] | [How to handle] |
-| [Risk] | [High/Med/Low] | [How to handle] |
+| [风险] | [高/中/低] | [如何处理] |
+| [风险] | [高/中/低] | [如何处理] |
 
-## MVP Completion Checklist
+## MVP 完成清单
 
-### Development Complete
-- [ ] All core features working
-- [ ] Basic error handling
-- [ ] Mobile responsive
-- [ ] Cross-browser tested
+### 开发完成
+- [ ] 所有核心功能正常工作
+- [ ] 基本错误处理
+- [ ] 移动端响应式
+- [ ] 跨浏览器测试
 
-### Launch Ready
-- [ ] Analytics configured
-- [ ] Basic SEO setup
-- [ ] Contact/support method
-- [ ] Privacy policy & terms
+### 发布就绪
+- [ ] 分析已配置
+- [ ] 基本 SEO 设置
+- [ ] 联系方式/支持方式
+- [ ] 隐私政策和使用条款
 
-### Quality Checks
-- [ ] Friends & family tested
-- [ ] Core journey works end-to-end
-- [ ] No critical bugs
-- [ ] Performance acceptable
+### 质量检查
+- [ ] 朋友和家人测试完成
+- [ ] 核心旅程端到端可用
+- [ ] 没有关键 bug
+- [ ] 性能可接受
 
-## Next Steps
+## 下一步
 
-1. **Immediate:** Review and approve this PRD
-2. **Next:** Create Technical Design Document (Part 3)
-3. **Then:** Set up development environment
-4. **Build:** Implement with AI assistance
-5. **Test:** Beta with 10-20 users
-6. **Launch:** Go live!
+1. **立即：** 审核并批准此 PRD
+2. **下一步：** 创建技术设计文档（第三部分）
+3. **然后：** 设置开发环境
+4. **构建：** 在 AI 协助下实现
+5. **测试：** 与 10-20 个用户测试
+6. **发布：** 上线！
 
 ---
-*Created: [Date]*
-*Status: Ready for Technical Design*
-*Questions? [Contact]*
+*创建日期：[日期]*
+*状态：准备技术设计*
+*问题？[联系方式]*
 ```
 
 ---
 
-## Final Instructions
+## 最终说明
 
-After generating the appropriate PRD document based on their level, say:
+根据他们的水平生成合适的 PRD 文档后，说：
 
-"I've created your Product Requirements Document (PRD) above. This document defines WHAT you're building and WHY.
+"我已经为你创建了产品需求文档（PRD）。这份文档定义了你要构建什么以及为什么。
 
-### Self-Verification Checklist
+### 自我验证清单
 
-Before proceeding, let's verify the PRD is complete:
+在继续之前，让我们验证 PRD 是否完整：
 
-| Required Section | Present? |
+| 必需部分 | 是否存在？ |
 |-----------------|----------|
-| Core problem clearly defined | Yes / No |
-| Target user well described | Yes / No |
-| 3-5 must-have features listed | Yes / No |
-| Each feature has user story | Yes / No |
-| Success metrics defined | Yes / No |
-| Constraints acknowledged | Yes / No |
-| NOT-in-MVP features listed | Yes / No |
+| 核心问题定义清晰 | 是 / 否 |
+| 目标用户描述充分 | 是 / 否 |
+| 列出 3-5 个必须有功能 | 是 / 否 |
+| 每个功能有用户故事 | 是 / 否 |
+| 定义了成功指标 | 是 / 否 |
+| 承认了限制条件 | 是 / 否 |
+| 列出了不在 MVP 的功能 | 是 / 否 |
 
-*If any items are missing, I'll add them now.*
+*如果缺少任何项目，我现在就添加。*
 
-### Next Steps:
+### 下一步：
 
-1. **Review the PRD** — Make sure it captures your vision accurately
-2. **Save the document** as `PRD-[AppName]-MVP.md` in your project folder
-3. **Proceed to Part 3** to create your Technical Design Document
+1. **审核 PRD** — 确保它准确捕捉你的愿景
+2. **保存文档** 为 `PRD-[应用名]-MVP.md` 放在你的项目文件夹中
+3. **进入第三部分** 创建你的技术设计文档
 
-The PRD is a living document — update it as you learn from users.
+PRD 是一份活的文档 — 随着你从用户那里学到东西，不断更新它。
 
-Would you like me to adjust anything in the PRD before moving on to technical design?"
+在进入技术设计之前，你想让我调整 PRD 中的任何内容吗？"
 
 ---

@@ -4,131 +4,131 @@ description: Create a Product Requirements Document (PRD) for your MVP. Use when
 allowed-tools: Read, Write, Glob, Grep, AskUserQuestion
 ---
 
-# Vibe-Coding PRD Generator
+# Vibe-Coding PRD 生成器
 
-You are helping the user create a Product Requirements Document (PRD). This is Step 2 of the vibe-coding workflow.
+你正在帮助用户创建产品需求文档（PRD）。这是 vibe-coding 工作流程的第二步。
 
-## Your Role
+## 你的角色
 
-Guide the user through defining WHAT they're building, WHO it's for, and WHY it matters. Ask questions one at a time.
+引导用户定义他们要构建什么、给谁构建、以及为什么重要。一次问一个问题。
 
-## Session Continuity
+## 会话连续性
 
-1. Reuse prior research context instead of restarting in an empty chat.
-2. Ask for a compact handoff summary if the user restarted sessions.
-3. Preserve key constraints and decisions in a short recap before generating the PRD.
+1. 重用之前的研究上下文而不是在空聊天中重新开始。
+2. 如果用户重新启动了会话，请求一个紧凑的交接摘要。
+3. 在生成 PRD 之前保留关键约束和决策的简短回顾。
 
-## Naming Policy
+## 命名策略
 
-Use model family names in examples and recommendations unless the user explicitly asks for exact version names.
+除非用户明确要求精确版本名称，否则在示例和建议中使用模型系列名称。
 
-## Step 1: Check for Research
+## 第一步：检查研究
 
-First, check if research exists:
+首先，检查是否存在研究：
 
-1. Look for `docs/research-*.md` (or `*.txt` for backward compatibility) in the project
-2. If found, read it and reference insights during Q&A
-3. If not found, proceed without it
+1. 在项目中查找 `docs/research-*.md`（或 `*.txt` 以保持向后兼容）
+2. 如果找到，读取并在问答中引用见解
+3. 如果没找到，继续进行
 
-Ask the user:
-> Do you have research findings from Part 1? If so, I'll reference them. If not, we can still create a great PRD.
+问用户：
+> 你有第一部分的研究结果吗？如果有，我会引用它们。如果没有，我们仍然可以创建一个很棒的 PRD。
 
-## Step 2: Determine Technical Level
+## 第二步：确定技术级别
 
-Ask:
-> **What's your technical background?**
-> - **A) Vibe-coder** — Great ideas, limited coding experience
-> - **B) Developer** — Experienced programmer
-> - **C) Somewhere in between** — Some coding knowledge, still learning
+问：
+> **你的技术背景是什么？**
+> - **A) Vibe-coder** — 好想法，编码经验有限
+> - **B) 开发者** — 经验丰富的程序员
+> - **C) 介于两者之间** — 有一些编码知识，仍在学习
 
-## Step 3: Initial Questions (All Levels)
+## 第三步：初始问题（所有级别）
 
-Ask these first, ONE AT A TIME:
+一次问一个这些问题：
 
-1. "What's the name of your product/app? (If undecided, we can brainstorm!)"
-2. "In one sentence, what problem does it solve?"
-3. "What's your launch goal? (Examples: '100 users', '$1000 MRR', 'Learn to build apps')"
+1. "你的产品/应用叫什么名字？（如果还没决定，我们可以一起头脑风暴！）"
+2. "用一句话描述，它解决什么问题？"
+3. "你的上线目标是什么？（例如：'100 个用户'、'$1000 月收入'、'学习构建应用'）"
 
-## Step 4: Level-Specific Questions
+## 第四步：级别特定问题
 
-### Level A (Vibe-coder):
+### A 级（Vibe-coder）：
 
-4. "Who will use your app? What do they do, what frustrates them, how tech-savvy are they?"
-5. "Tell me the user journey story: [User] has problem X, discovers your app, does Y, now they're happy because Z"
-6. "What are the 3-5 MUST-have features for launch? Absolute essentials only!"
-7. "What features are you intentionally saving for version 2?"
-8. "How will you know it's working? Pick 1-2 metrics: signups, daily users, tasks completed, or feedback score?"
-9. "Describe the vibe in 3-5 words (e.g., 'Clean, fast, professional' or 'Fun, colorful, friendly')"
-10. "Any constraints? Budget, timeline, performance, security, platform needs?"
+4. "谁会使用你的应用？他们是做什么的，什么让他们沮丧，他们的科技素养如何？"
+5. "告诉我用户旅程故事：[用户] 有问题 X，发现你的应用，做 Y，现在他们开心因为 Z"
+6. "上线前必须有的 3-5 个功能是什么？只要绝对必要的东西！"
+7. "你计划在第 2 版中保存什么功能？"
+8. "你怎么知道它是否有效？选择 1-2 个指标：注册人数、日活跃用户、完成的任务或反馈分数？"
+9. "用 3-5 个词描述风格（例如，'简洁、快速、专业'或'有趣、色彩丰富、友好'）"
+10. "有什么限制吗？预算、时间线、性能、安全、平台需求？"
 
-### Level B (Developer):
+### B 级（开发者）：
 
-4. "Define your target audience: Primary persona, secondary personas, jobs to be done"
-5. "Write 3-5 user stories: 'As a [user], I want to [action] so that [benefit]'"
-6. "List features with MoSCoW: Must have (3-5), Should have (2-3), Could have (2-3), Won't have"
-7. "Define success metrics: Activation, Engagement, Retention, Revenue (with targets)"
-8. "Technical/UX requirements: Performance, accessibility, platform support, security, scalability"
-9. "Risk assessment: Technical, market, and execution risks"
-10. "Business model and constraints: Monetization, budget, timeline, compliance"
+4. "定义你的目标受众：主要用户画像、次要用户画像、待完成的工作"
+5. "写 3-5 个用户故事：'作为 [用户]，我想要 [动作] 以便 [好处]'"
+6. "用 MoSCoW 列出功能：必须有（3-5）、应该有（2-3）、可以有（2-3）、不会有"
+7. "定义成功指标：激活、参与、留存、收入（带目标）"
+8. "技术/UX 要求：性能、可访问性、平台支持、安全、可扩展性"
+9. "风险评估：技术、市场和执行风险"
+10. "商业模式和限制：盈利模式、预算、时间线、合规"
 
-### Level C (In-Between):
+### C 级（介于两者之间）：
 
-4. "Who are your users? Primary type, main problem, current solutions they use"
-5. "Walk through the main user flow: Arrives because..., First sees..., Core action..., Value received..."
-6. "What 3-5 features must be in v1? For each: name, what it does, why essential"
-7. "What are you NOT building yet? List v2 features and why they can wait"
-8. "How will you measure success? Short term (1 month) and medium term (3 months)"
-9. "Design/UX: Visual style, key screens, mobile responsive?"
-10. "Constraints: Budget, timeline, non-functional requirements, tech preferences"
+4. "你的用户是谁？主要类型、主要问题、他们当前使用的解决方案"
+5. "走一遍主要用户流程：到达因为...、首先看到...、核心动作...、获得价值..."
+6. "v1 中必须有哪些 3-5 个功能？对于每个：名称、作用、为什么必要"
+7. "你目前不构建什么？列出 v2 功能及为什么可以等待"
+8. "你怎么衡量成功？短期（1 个月）和中期（3 个月）"
+9. "设计/UX：视觉风格、关键屏幕、移动端响应式？"
+10. "限制：预算、时间线、非功能性需求、技术偏好"
 
-## Step 5: Verification Echo
+## 第五步：验证回显
 
-After ALL questions, summarize:
+在所有问题之后，摘要：
 
-> **Let me confirm I understand your product:**
+> **让我确认我理解你的产品：**
 >
-> **Product:** [Name] - [One-line description]
-> **Target User:** [Primary persona]
-> **Problem:** [Core problem]
-> **Must-Have Features:**
-> 1. [Feature 1]
-> 2. [Feature 2]
-> 3. [Feature 3]
-> **Success Metric:** [Primary metric and target]
-> **Timeline:** [Launch target]
-> **Budget:** [Constraints]
+> **产品：** [名称] - [一句话描述]
+> **目标用户：** [主要用户画像]
+> **问题：** [核心问题]
+> **必须有功能：**
+> 1. [功能 1]
+> 2. [功能 2]
+> 3. [功能 3]
+> **成功指标：** [主要指标和目标]
+> **时间线：** [上线目标]
+> **预算：** [限制]
 >
-> Is this accurate? Should I adjust anything before creating your PRD?
+> 这准确吗？在创建你的 PRD 之前，我应该调整什么吗？
 
-## Step 6: Generate PRD
+## 第六步：生成 PRD
 
-After confirmation, generate the PRD document tailored to their level.
+确认后，生成适合他们级别的 PRD 文档。
 
-### PRD Structure:
+### PRD 结构：
 
-1. **Product Overview** - Name, tagline, goal, timeline
-2. **Target Users** - Persona, pain points, needs
-3. **Problem Statement** - What we're solving and why
-4. **User Journey** - Discovery to success
-5. **MVP Features** - Must-have with user stories and success criteria
-6. **Success Metrics** - How we'll measure
-7. **Design Direction** - Visual style and key screens
-8. **Technical Considerations** - Platform, performance, security
-9. **Constraints** - Budget, timeline, scope
-10. **Definition of Done** - Launch checklist
+1. **产品概述** - 名称、标语、目标、时间线
+2. **目标用户** - 用户画像、痛点、需求
+3. **问题陈述** - 我们要解决什么以及为什么
+4. **用户旅程** - 从发现到成功
+5. **MVP 功能** - 必须有的功能和用户故事及成功标准
+6. **成功指标** - 我们将如何衡量
+7. **设计方向** - 视觉风格和关键屏幕
+8. **技术考虑** - 平台、性能、安全
+9. **限制** - 预算、时间线、范围
+10. **完成定义** - 上线检查清单
 
-Write the PRD to `docs/PRD-[AppName]-MVP.md`.
+将 PRD 写入 `docs/PRD-[应用名称]-MVP.md`。
 
-## After Completion
+## 完成之后
 
-Tell the user:
+告诉用户：
 
-> Your PRD is saved to `docs/PRD-[AppName]-MVP.md`.
+> 你的 PRD 已保存到 `docs/PRD-[应用名称]-MVP.md`。
 >
-> **Self-Verification:**
-> - Core problem clearly defined?
-> - Target user well described?
-> - 3-5 must-have features listed?
-> - Success metrics defined?
+> **自我验证：**
+> - 核心问题是否定义清楚？
+> - 目标用户是否描述充分？
+> - 是否列出了 3-5 个必须有功能？
+> - 成功指标是否定义？
 >
-> **Next Step:** Run `/vibe-techdesign` to create your Technical Design Document.
+> **下一步：** 运行 `/vibe-techdesign` 创建你的技术设计文档。

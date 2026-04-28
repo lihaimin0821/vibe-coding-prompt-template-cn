@@ -1,14 +1,14 @@
-# Testing Strategy
+# 测试策略
 
-## Frameworks
-- **Unit Tests:** [Tool, e.g., Vitest]
-- **E2E Tests:** [Tool, e.g., Playwright]
+## 框架
+- **单元测试：** [工具，例如 Vitest]
+- **端到端测试：** [工具，例如 Playwright]
 
-## Rules & Requirements
-- **Coverage:** Aim for [X]% code coverage on critical paths.
-- **Before Commit:** Always run `[npm run test]` before verifying a task is complete.
-- **Failures:** NEVER skip tests or mock out assertions to make a pipeline pass without Human approval. If an Agent breaks a test, the Agent must fix it.
+## 规则与要求
+- **覆盖率：** 关键路径的代码覆盖率达到 [X]%。
+- **提交前：** 验证任务完成前始终运行 `[npm run test]`。
+- **失败处理：** 未经人工批准，切勿跳过测试或 mock 断言以使 pipeline 通过。如果 Agent 破坏了测试，Agent 必须修复它。
 
-## Execution
-- Command to run all tests: `[Command]`
-- Command to run a single test file: `[Command pattern]`
+## 执行
+- 运行所有测试的命令：`[命令]`
+- 运行单个测试文件的命令：`[命令模式]`

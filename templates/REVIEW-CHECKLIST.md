@@ -1,21 +1,21 @@
-# Artifact Review Checklist 🔍
+# 工件审查清单 🔍
 
-> **AGENTS:** Do not mark a feature or task as "Complete" until you verify these checks manually or via automated test runs. Provide terminal logs or browser testing results as proof. 
-> **HUMANS:** Use this checklist before merging Agent-generated code.
+> **AGENTS：** 在手动验证或通过自动化测试运行验证这些检查项之前，请勿将功能或任务标记为"完成"。提供终端日志或浏览器测试结果作为证明。
+> **人类：** 在合并 Agent 生成的代码之前使用此清单。
 
-## Code Quality & Safety
-- [ ] No `any` types used (or strictly justified with `unknown` and type guards).
-- [ ] Protected files/directories (like infrastructure or migrations) were NOT modified without permission.
-- [ ] No existing, unrelated tests were deleted or skipped.
-- [ ] Component/Function is modular and doesn't violently break established architecture boundaries.
+## 代码质量与安全
+- [ ] 未使用 `any` 类型（或严格使用 `unknown` 和类型守卫来证明其合理性）。
+- [ ] 受保护的文件/目录（如基础设施或迁移文件）未经许可未被修改。
+- [ ] 未删除或跳过现有的、不相关的测试。
+- [ ] 组件/函数是模块化的，不会严重破坏已建立的架构边界。
 
-## Execution & Testing
-- [ ] Application compiles without fatal errors.
-- [ ] Linter passes (`npm run lint` or equivalent).
-- [ ] Type check passes (`tsc --noEmit` or equivalent).
-- [ ] Related Unit/Integration tests pass.
-- [ ] UI is decently responsive across Desktop and Mobile viewports (if applicable).
+## 执行与测试
+- [ ] 应用程序编译无误，无致命错误。
+- [ ] 代码检查器通过（`npm run lint` 或等效命令）。
+- [ ] 类型检查通过（`tsc --noEmit` 或等效命令）。
+- [ ] 相关的单元/集成测试通过。
+- [ ] UI 在桌面和移动视口上具有良好的响应性（如适用）。
 
-## Artifact Handoff
-- [ ] The `MEMORY.md` file was updated with any new architectural decisions made during this task.
-- [ ] Any obsolete spec files in the workspace have been marked as resolved or archived.
+## 工件交接
+- [ ] `MEMORY.md` 文件已更新，记录了此任务期间做出的任何新架构决策。
+- [ ] 工作区中任何过时的 spec 文件已标记为已解决或已归档。

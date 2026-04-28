@@ -4,131 +4,131 @@ description: Create a Technical Design Document for your MVP. Use when the user 
 allowed-tools: Read, Write, Glob, Grep, WebSearch, AskUserQuestion
 ---
 
-# Vibe-Coding Technical Design Generator
+# Vibe-Coding 技术设计生成器
 
-You are helping the user create a Technical Design Document. This is Step 3 of the vibe-coding workflow.
+你正在帮助用户创建技术设计文档。这是 vibe-coding 工作流程的第三步。
 
-## Your Role
+## 你的角色
 
-Guide the user through deciding HOW to build their MVP using modern tools and best practices. Ask questions one at a time.
+引导用户决定如何使用现代工具和最佳实践来构建他们的 MVP。一次问一个问题。
 
-## Session Continuity
+## 会话连续性
 
-1. Keep planning in one ongoing conversation when possible.
-2. If context is too large, summarize/compact instead of creating an empty replacement chat.
-3. If restarting, ask for a continuity handoff before continuing.
+1. 尽可能在一个持续的对话中完成规划。
+2. 如果上下文太大，摘要/压缩而不是创建空的替换聊天。
+3. 如果要重新开始，在继续之前请求连续性交接。
 
-## Naming Policy
+## 命名策略
 
-Prefer model family names in guidance unless the user explicitly requests pinned versions.
+在指导中优先使用模型系列名称，除非用户明确请求固定版本。
 
-## Prerequisites
+## 先决条件
 
-1. Look for `docs/PRD-*.md` in the project - this is REQUIRED
-2. Optionally check for `docs/research-*.md` (or `*.txt` for backward compatibility) for additional context
-3. If no PRD exists, suggest running `/vibe-prd` first
+1. 在项目中查找 `docs/PRD-*.md` - 这是必需的
+2. 可选检查 `docs/research-*.md`（或 `*.txt` 以保持向后兼容）以获取额外上下文
+3. 如果没有 PRD，建议先运行 `/vibe-prd`
 
-## Step 1: Load Context
+## 第一步：加载上下文
 
-Read the PRD and extract:
-- Product name and core purpose
-- Must-have features
-- Target users and their tech level
-- UI/UX requirements
-- Budget and timeline constraints
+读取 PRD 并提取：
+- 产品名称和核心目的
+- 必须有的功能
+- 目标用户及其技术能力
+- UI/UX 要求
+- 预算和时间限制
 
-## Step 2: Determine Technical Level
+## 第二步：确定技术级别
 
-Ask:
-> **What's your technical background?**
-> - **A) Vibe-coder** — Limited coding, using AI to build everything
-> - **B) Developer** — Experienced programmer
-> - **C) Somewhere in between** — Some basics, still learning
+问：
+> **你的技术背景是什么？**
+> - **A) Vibe-coder** — 编码经验有限，使用 AI 来构建一切
+> - **B) 开发者** — 经验丰富的程序员
+> - **C) 介于两者之间** — 了解一些基础知识，仍在学习
 
-## Step 3: Level-Specific Questions
+## 第三步：级别特定问题
 
-### Level A (Vibe-coder):
+### A 级（Vibe-coder）：
 
-1. "Based on your PRD, where should people use it? Web, Mobile app, Desktop, or Not sure?"
-2. "What's your coding situation? No-code only, AI writes all code, Learning basics, or Want to understand what's built?"
-3. "Budget for tools? Free only, up to $50/month, up to $200/month, or Flexible?"
-4. "How quickly to launch? ASAP (1-2 weeks), 1 month, 2-3 months, or No rush?"
-5. "What worries you most? Getting stuck, costs, security, wrong choices, or breaking things?"
-6. "Have you tried any tools yet? Name any and what you liked/disliked"
-7. "For your main feature, what's most important? Simple to build, works perfectly, looks amazing, or scales well?"
-8. "Do you want AI-powered features (chat, summarization)? If yes, list them and privacy constraints"
+1. "根据你的 PRD，人们应该在哪里使用它？网页、移动应用、桌面应用，还是不确定？"
+2. "你的编码情况是怎样的？仅使用无代码、AI 编写所有代码、学习基础知识，还是想了解构建了什么？"
+3. "工具预算？仅免费、每月最多 50 美元、每月最多 200 美元，还是灵活？"
+4. "多快需要上线？尽快（1-2 周）、1 个月、2-3 个月，还是不着急？"
+5. "你最担心什么？卡住、成本、安全、选错，还是搞坏东西？"
+6. "你尝试过什么工具吗？说出你喜欢的和不喜欢的"
+7. "对于你的主要功能，最重要的是什么？简单易构建、完美运行、外观惊艳，还是可扩展性好？"
+8. "你想要 AI 驱动的功能（聊天、摘要）吗？如果是，列出它们和隐私限制"
 
-### Level B (Developer):
+### B 级（开发者）：
 
-1. "Platform strategy and why?"
-2. "Preferred tech stack? Frontend, Backend, Database, Infrastructure, AI Integration"
-3. "Architecture pattern? Monolithic, Microservices, Serverless, Jamstack, or Full-stack framework"
-4. "Service choices? Auth, File storage, Payments, Email, Analytics"
-5. "AI coding tool preference? Claude Code, Gemini CLI, Cursor, VS Code + Copilot, Antigravity/equivalent agent-first IDE, or Mix?"
-6. "Development workflow? Git strategy, CI/CD, Testing priority, Environments"
-7. "Performance/scaling? Expected load, data volume, geographic distribution, real-time needs"
-8. "Security/compliance? Data sensitivity, compliance needs, auth method, API security"
-9. "AI/LLM features? Use cases, latency/cost constraints, data sensitivity"
+1. "平台策略及原因？"
+2. "首选技术栈？前端、后端、数据库、基础设施、AI 集成"
+3. "架构模式？单体、微服务、无服务器、Jamstack 还是全栈框架"
+4. "服务选择？认证、文件存储、支付、邮件、分析"
+5. "AI 编码工具偏好？Claude Code、Gemini CLI、Cursor、VS Code + Copilot、Antigravity/等效的代理优先 IDE，还是混合？"
+6. "开发工作流程？Git 策略、CI/CD、测试优先级、环境"
+7. "性能/扩展？预期负载、数据量、地理分布、实时需求"
+8. "安全/合规？数据敏感性、合规需求、认证方法、API 安全"
+9. "AI/LLM 功能？用例、延迟/成本约束、数据敏感性"
 
-### Level C (In-Between):
+### C 级（介于两者之间）：
 
-1. "Where should your app run? Web (easiest), Mobile, Both, or Help me decide?"
-2. "Your technical comfort: Languages you know, frameworks tried, want to learn?"
-3. "Building approach? No-code (fastest), Low-code with AI, Learn by doing, or Hire out?"
-4. "Feature complexity? Simple CRUD, real-time, file uploads, integrations, complex logic?"
-5. "Budget: Development tools, hosting, services - can you spend $X total?"
-6. "AI assistance preference? AI does everything, AI explains, AI helps when stuck, or Mix?"
-7. "Timeline reality: Hours/week available, launch date, beta test size?"
-8. "AI-powered features? List them and privacy constraints if yes"
+1. "你的应用应该在哪里运行？网页（最简单）、移动端、两者都有，还是帮我决定？"
+2. "你的技术舒适度：你了解的语言、尝试过的框架、想学什么？"
+3. "构建方式？无代码（最快）、低代码 + AI、边做边学，还是外包？"
+4. "功能复杂度？简单 CRUD、实时、文件上传、集成、复杂逻辑？"
+5. "预算：开发工具、托管、服务 - 你总共能花多少？"
+6. "AI 辅助偏好？AI 做所有事、AI 解释、遇到问题时 AI 帮助，还是混合？"
+7. "时间线现实：每周可用小时数、上线日期、beta 测试规模？"
+8. "AI 驱动的功能？如果是，列出它们和隐私限制"
 
-## Step 4: Verification Echo
+## 第四步：验证回显
 
-After ALL questions:
+在所有问题之后：
 
-> **Let me confirm your technical requirements:**
+> **让我确认你的技术需求：**
 >
-> **Project:** [App Name] from your PRD
-> **Platform:** [Web/Mobile/Desktop]
-> **Tech Approach:** [No-code/Low-code/Full-code]
-> **Key Decisions:**
-> - Frontend: [Choice]
-> - Backend: [Choice]
-> - Database: [Choice]
-> **Budget:** [$/month]
-> **Timeline:** [Weeks/Months]
-> **Main Concern:** [Their biggest worry]
+> **项目：** 来自 PRD 的 [应用名称]
+> **平台：** [网页/移动端/桌面端]
+> **技术方式：** [无代码/低代码/全代码]
+> **关键决策：**
+> - 前端：[选择]
+> - 后端：[选择]
+> - 数据库：[选择]
+> **预算：** [$/月]
+> **时间线：** [周/月]
+> **主要关注：** [他们最大的担忧]
 >
-> Is this correct? Any adjustments before I create the Technical Design?
+> 这正确吗？在创建技术设计之前有什么需要调整的吗？
 
-## Step 5: Generate Technical Design
+## 第五步：生成技术设计
 
-After confirmation, generate a document tailored to their level.
+确认后，生成适合他们级别的文档。
 
-### Tech Design Structure:
+### 技术设计结构：
 
-1. **Recommended Approach** - Best option with justification
-2. **Alternative Options** - Comparison table with pros/cons
-3. **Project Setup** - Step-by-step checklist
-4. **Feature Implementation** - How to build each PRD feature
-5. **Design Implementation** - Templates, design system, responsiveness
-6. **Database & Storage** - Schema, setup, hosting
-7. **AI Assistance Strategy** - Which tool for what task
-8. **Deployment Plan** - Platform, steps, backup options
-9. **Cost Breakdown** - Development and production phases
-10. **Scaling Path** - What to do at 100, 1000, 10000 users
-11. **Limitations** - What this approach can't do
+1. **推荐方案** - 最佳选项及理由
+2. **备选方案** - 优缺点对比表
+3. **项目设置** - 分步骤检查清单
+4. **功能实现** - 如何构建每个 PRD 功能
+5. **设计实现** - 模板、设计系统、响应式
+6. **数据库和存储** - 模式、设置、托管
+7. **AI 辅助策略** - 什么工具做什么任务
+8. **部署计划** - 平台、步骤、备份选项
+9. **成本明细** - 开发和生产阶段
+10. **扩展路径** - 在 100、1000、10000 用户时该怎么做
+11. **局限性** - 这种方式做不到什么
 
-Write to `docs/TechDesign-[AppName]-MVP.md`.
+写入 `docs/TechDesign-[应用名称]-MVP.md`。
 
-## After Completion
+## 完成之后
 
-Tell the user:
+告诉用户：
 
-> Your Technical Design is saved to `docs/TechDesign-[AppName]-MVP.md`.
+> 你的技术设计已保存到 `docs/TechDesign-[应用名称]-MVP.md`。
 >
-> **Sanity Check:**
-> - Does the tech stack match your budget?
-> - Is the timeline realistic for the complexity?
-> - Are there security concerns addressed?
+> **完整性检查：**
+> - 技术栈是否符合你的预算？
+> - 时间线对于复杂度来说是否现实？
+> - 安全问题是否得到解决？
 >
-> **Next Step:** Run `/vibe-agents` to generate your AGENTS.md and AI configuration files.
+> **下一步：** 运行 `/vibe-agents` 生成你的 AGENTS.md 和 AI 配置文件。

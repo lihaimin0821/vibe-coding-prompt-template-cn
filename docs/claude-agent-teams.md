@@ -1,35 +1,35 @@
-# Claude Code & Agent Teams (2026 Guide)
+# Claude Code 与 Agent 团队（2026 指南）
 
-In February 2026, Anthropic significantly upgraded the Claude CLI to support **Agent Teams**. For vibe-coding MVPs, this represents a massive speed and safety upgrade. You no longer have to rely on a single agent trying to rewrite your entire stack at once.
+2026 年 2 月，Anthropic 大幅升级了 Claude CLI 以支持 **Agent 团队（Agent Teams）**。对于 vibe-coding MVP 来说，这代表了一次巨大的速度和安全性提升。你不再需要依赖单个代理试图一次性重写整个技术栈。
 
-## 1. What are Agent Teams?
+## 1. 什么是 Agent 团队？
 
-Claude Code can now spawn teammates that work in parallel, maintaining their own context windows. 
+Claude Code 现在可以生成并行工作的队友，各自维护自己的上下文窗口。
 
-Instead of typing: *"Build my authentication system"*, you should now establish a squad.
+不再需要输入：*"构建我的认证系统"*，你现在应该建立一个团队。
 
-### The "Team Lead" Pattern
-Open Claude Code and use this prompt:
-> *"Read `AGENTS.md`. You are the Team Lead. Please spawn a Researcher teammate to read my existing DB schema, and a Coder teammate to write the new auth routes. You must approve the Coder's plan before they write any code."*
+### "团队领导"模式
+打开 Claude Code 并使用以下提示词：
+> *"读取 `AGENTS.md`。你是团队领导。请生成一个研究员队友来读取我现有的数据库 schema，一个编码员队友来编写新的认证路由。在编码员编写任何代码之前，你必须批准其计划。"*
 
-This isolates tasks. The Researcher reads files, the Coder writes files, and the Lead manages the task list. 
+这实现了任务隔离。研究人员读取文件，编码员编写文件，领导管理任务列表。
 
-## 2. Using "Plan Mode"
+## 2. 使用"计划模式"
 
-To stop AI from randomly destroying working code, aggressively use the new Plan-First methodology.
+为了阻止 AI 随机破坏工作代码，请积极使用新的先计划后执行方法论。
 
-- **Rule:** Never let a teammate execute directly on a complex feature. 
-- Instruct the Lead Agent: *"Before any teammate modifies files in `src/`, they must present a markdown plan and wait for my 'go ahead'."*
-- This workflow dramatically reduces silent regressions. 
+- **规则：** 永远不要让队友直接在复杂功能上执行。
+- 指示领导代理：*"在任何队友修改 `src/` 中的文件之前，他们必须展示一个 markdown 计划并等待我的'开始'。"*
+- 此工作流程显著减少了静默回归。
 
-## 3. Auto-Compaction vs Context Limits
+## 3. 自动压缩与上下文限制
 
-Claude handles long context brilliantly, but over a 3-hour vibe-coding session, the agent will slow down. 
+Claude 处理长上下文表现出色，但在 3 小时的 vibe-coding 会话中，代理会变慢。
 
-- Use Claude's new **compaction** capability natively instead of wiping the chat.
-- Tell Claude: *"We are switching contexts from the Frontend to the Backend. Please trigger an auto-compaction of this session's history to focus only on backend state."*
-- Pair this with appending updates to your physical `MEMORY.md` file whenever a major module is completed.
+- 使用 Claude 新的**压缩**功能而非清除聊天。
+- 告诉 Claude：*"我们正在从前端切换到后端上下文。请触发此会话历史的自动压缩，只关注后端状态。"*
+- 每当完成一个主要模块时，将其更新追加到物理 `MEMORY.md` 文件中。
 
-## 4. Voice Commands (Optional)
+## 4. 语音命令（可选）
 
-If you are using the latest Claude Code capabilities, you can interface via voice to dictate complex logic tweaks or PRD adjustments, which Claude will transcribe and inject straight into the Team Lead's task queue. This is incredibly helpful when you're reviewing a frontend visually and just want to "speak" your feedback.
+如果你使用的是最新的 Claude Code 功能，可以通过语音来口述复杂的逻辑调整或 PRD 修改，Claude 会将其转录并直接注入团队领导的任务队列中。当你在视觉上审查前端并只是想"说出"你的反馈时，这非常有用。

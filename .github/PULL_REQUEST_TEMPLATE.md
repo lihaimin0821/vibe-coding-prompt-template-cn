@@ -1,21 +1,21 @@
-## Summary
-- [ ] Short description of the change
+## 摘要
+- [ ] 变更的简短描述
 
-## Changes
-- [ ] Key updates (files, prompts, or workflow steps)
+## 变更内容
+- [ ] 关键更新（文件、提示或工作流程步骤）
 
-## Testing
-- [ ] Not run (explain why)
-- [ ] Manual checks
-- [ ] Automated tests (list commands)
+## 测试
+- [ ] 未运行（说明原因）
+- [ ] 手动检查
+- [ ] 自动化测试（列出命令）
 
-## Docs/Guides Impact
-- [ ] README updated (if needed)
-- [ ] Workflow prompts updated (if needed)
-- [ ] Tool config guidance updated (if needed)
+## 文档/指南影响
+- [ ] README 已更新（如需要）
+- [ ] 工作流程提示已更新（如需要）
+- [ ] 工具配置指导已更新（如需要）
 
-## Checklist
-- [ ] Changes match project scope
-- [ ] No unrelated files modified
-- [ ] Links verified (if applicable)
-- [ ] Ready for review
+## 检查清单
+- [ ] 变更符合项目范围
+- [ ] 未修改无关文件
+- [ ] 链接已验证（如适用）
+- [ ] 已准备好供审查

@@ -1,26 +1,26 @@
-# System Memory & Context 🧠
+# 系统内存与上下文 🧠
 <!--
-AGENTS: Update this file after every major milestone, structural change, or resolved bug.
-DO NOT delete historical context if it is still relevant. Compress older completed items.
+AGENTS：每个主要里程碑、结构性更改或修复的 bug 之后更新此文件。
+如果历史上下文仍然相关，请勿删除。压缩较旧的已完成项目。
 -->
 
-## 🏗️ Active Phase & Goal
-**Current Task:** [e.g., Complete active component or specific route]
-**Next Steps:**
-1. [Step 1]
-2. [Step 2]
+## 🏗️ 当前阶段与目标
+**当前任务：** [例如：完成活动组件或特定路由]
+**下一步：**
+1. [步骤 1]
+2. [步骤 2]
 
-## 📂 Architectural Decisions
-*(Log specific choices made during the build here so future agents respect them)*
-- [Date] - [Decision] e.g., Chose Zustand over Redux for local component state to reduce boilerplate.
-- [Date] - [Decision]
+## 📂 架构决策
+*（在此记录构建过程中做出的具体选择，以便未来的 agent 遵循）*
+- [日期] - [决策] 例如：选择 Zustand 而非 Redux 来管理本地组件状态，以减少样板代码。
+- [日期] - [决策]
 
-## 🐛 Known Issues & Quirks
-*(Log current bugs or weird workarounds here)*
-- [e.g., API route X occasionally fails due to rate limits from Third Party Y].
-- [e.g., Database seed script must be run with command Z to avoid PK conflicts].
+## 🐛 已知问题与怪癖
+*（在此记录当前的 bug 或奇怪的变通方案）*
+- [例如：API 路由 X 由于第三方 Y 的速率限制偶尔失败]。
+- [例如：必须使用命令 Z 运行数据库种子脚本以避免主键冲突]。
 
-## 📜 Completed Phases
-- [ ] Initial scaffold
-- [ ] Database schema creation
-- [ ] Auth integration
+## 📜 已完成阶段
+- [ ] 初始脚手架
+- [ ] 数据库 schema 创建
+- [ ] 认证集成

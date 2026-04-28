@@ -1,29 +1,29 @@
-# Claude Code Integration
+# Claude Code 集成
 
-This directory contains Claude Code skills and hooks for the Vibe-Coding workflow.
+此目录包含 Vibe-Coding 工作流程的 Claude Code 技能和钩子。
 
-## Quick Setup
+## 快速设置
 
-### Option A: Clone the Repository
+### 选项 A：克隆仓库
 
 ```bash
-# Clone the repo
+# 克隆仓库
 git clone https://github.com/KhazP/vibe-coding-prompt-template.git
 cd vibe-coding-prompt-template
 
-# Start Claude Code
+# 启动 Claude Code
 claude
 ```
 
-### Option B: Install Individual Skills with npx
+### 选项 B：使用 npx 安装独立技能
 
-Install only the skills you need directly into any project:
+直接将需要的技能安装到任何项目中：
 
 ```bash
-# Install master orchestrator skill
+# 安装主协调器技能
 npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-workflow
 
-# Install all skills at once
+# 同时安装所有技能
 npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-research
 npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-prd
 npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-techdesign
@@ -31,147 +31,147 @@ npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe
 npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-build
 ```
 
-> **Browse all skills:** [skills.sh/khazp/vibe-coding-prompt-template](https://skills.sh/khazp/vibe-coding-prompt-template)
+> **浏览所有技能：** [skills.sh/khazp/vibe-coding-prompt-template](https://skills.sh/khazp/vibe-coding-prompt-template)
 
-That's it! The skills are automatically available.
+设置完成！技能会自动生效。
 
-## Available Skills
+## 可用技能
 
-| Command | Description | Time | npx Install |
+| 命令 | 描述 | 时长 | npx 安装命令 |
 |---------|-------------|------|-------------|
-| `/vibe-workflow` | Complete guided workflow from idea to MVP | Full | `npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-workflow` |
-| `/vibe-research` | Deep research and market validation | 20 min | `npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-research` |
-| `/vibe-prd` | Create Product Requirements Document | 15 min | `npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-prd` |
-| `/vibe-techdesign` | Plan technical architecture | 15 min | `npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-techdesign` |
-| `/vibe-agents` | Generate AGENTS.md and AI configs | 10 min | `npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-agents` |
-| `/vibe-build` | Build your MVP following the plan | 1-3 hrs | `npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-build` |
+| `/vibe-workflow` | 从想法到 MVP 的完整引导工作流程 | 完整流程 | `npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-workflow` |
+| `/vibe-research` | 深度研究和市场验证 | 20 分钟 | `npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-research` |
+| `/vibe-prd` | 创建产品需求文档 | 15 分钟 | `npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-prd` |
+| `/vibe-techdesign` | 规划技术架构 | 15 分钟 | `npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-techdesign` |
+| `/vibe-agents` | 生成 AGENTS.md 和 AI 配置 | 10 分钟 | `npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-agents` |
+| `/vibe-build` | 按照计划构建 MVP | 1-3 小时 | `npx skills add https://github.com/khazp/vibe-coding-prompt-template --skill vibe-build` |
 
-## Skill Details
+## 技能详情
 
 ### /vibe-workflow
 
-**Master orchestrator** - Guides you through all 5 steps automatically.
+**主协调器** - 自动引导你完成全部 5 个步骤。
 
 ```
 > /vibe-workflow
 ```
 
-Or just say: *"Help me build an MVP"*
+或者直接说："帮我构建一个 MVP"
 
-The skill will:
-1. Check your current progress
-2. Identify which step you're on
-3. Guide you through remaining steps
-4. Track completion across sessions
+此技能将：
+1. 检查你的当前进度
+2. 确定你处于哪个步骤
+3. 引导你完成剩余步骤
+4. 跨会话跟踪完成情况
 
 ### /vibe-research
 
-**Market research and idea validation**
+**市场研究和想法验证**
 
-Triggers on:
-- "research my idea"
-- "validate my app"
-- "help me start a new project"
+触发条件：
+- "研究我的想法"
+- "验证我的应用"
+- "帮我开始一个新项目"
 
-Questions are tailored to your experience level:
-- **Vibe-coder**: Simple, friendly questions
-- **Developer**: Technical, detailed questions
-- **In-between**: Balanced approach
+问题会根据你的经验水平进行调整：
+- **Vibe-coder**：简单、友好的问题
+- **开发者**：技术性、详细的问题
+- **中间级别**：平衡的方法
 
-Output: `docs/research-[AppName].md`
+输出：`docs/research-[应用名称].md`
 
 ### /vibe-prd
 
-**Product Requirements Document generator**
+**产品需求文档生成器**
 
-Triggers on:
-- "create PRD"
-- "define my product"
-- "write requirements"
+触发条件：
+- "创建 PRD"
+- "定义我的产品"
+- "编写需求"
 
-Creates a comprehensive PRD with:
-- Product overview and goals
-- User personas and journeys
-- Feature prioritization (MoSCoW)
-- Success metrics
-- Design direction
+创建全面的 PRD，包含：
+- 产品概述和目标
+- 用户画像和用户旅程
+- 功能优先级（MoSCoW 方法）
+- 成功指标
+- 设计方向
 
-Output: `docs/PRD-[AppName]-MVP.md`
+输出：`docs/PRD-[应用名称]-MVP.md`
 
 ### /vibe-techdesign
 
-**Technical architecture planning**
+**技术架构规划**
 
-Triggers on:
-- "plan technical design"
-- "choose tech stack"
-- "how should I build this"
+触发条件：
+- "规划技术设计"
+- "选择技术栈"
+- "我应该怎么构建这个"
 
-Helps you decide:
-- Platform (web, mobile, desktop)
-- Tech stack with alternatives
-- Architecture pattern
-- Deployment strategy
-- Cost estimates
+帮助你决定：
+- 平台（网页、移动端、桌面端）
+- 技术栈及备选方案
+- 架构模式
+- 部署策略
+- 成本估算
 
-Output: `docs/TechDesign-[AppName]-MVP.md`
+输出：`docs/TechDesign-[应用名称]-MVP.md`
 
 ### /vibe-agents
 
-**AI configuration generator**
+**AI 配置生成器**
 
-Triggers on:
-- "create AGENTS.md"
-- "configure AI assistant"
-- "generate agent files"
+触发条件：
+- "创建 AGENTS.md"
+- "配置 AI 助手"
+- "生成代理文件"
 
-Creates:
-- `AGENTS.md` - Master build plan
-- `agent_docs/` - Detailed specifications
-- Tool-specific configs (CLAUDE.md, GEMINI.md, `.cursor/rules/` or legacy `.cursorrules`, etc.)
+创建：
+- `AGENTS.md` - 主构建计划
+- `agent_docs/` - 详细规格说明
+- 工具特定配置（CLAUDE.md、GEMINI.md、`.cursor/rules/` 或旧版 `.cursorrules` 等）
 
 ### /vibe-build
 
-**MVP builder**
+**MVP 构建器**
 
-Triggers on:
-- "build my MVP"
-- "start coding"
-- "implement the project"
+触发条件：
+- "构建我的 MVP"
+- "开始编码"
+- "实现项目"
 
-Follows Plan → Execute → Verify workflow:
-1. Reads AGENTS.md for current phase
-2. Proposes implementation plan
-3. Builds one feature at a time
-4. Tests after each feature
-5. Updates progress in AGENTS.md
+遵循计划 → 执行 → 验证工作流程：
+1. 读取 AGENTS.md 获取当前阶段
+2. 提出实施计划
+3. 一次构建一个功能
+4. 每个功能后进行测试
+5. 在 AGENTS.md 中更新进度
 
-## Pre-configured Hooks
+## 预配置的钩子
 
-This project includes hooks that run automatically:
+此项目包含自动运行的钩子：
 
-### PreToolUse Hooks
+### PreToolUse 钩子
 
-**File Protection** - Blocks accidental modifications to:
-- `.env` files (secrets)
-- `package-lock.json` (use npm instead)
-- `.git/` directory
+**文件保护** - 阻止意外修改：
+- `.env` 文件（密钥）
+- `package-lock.json`（使用 npm）
+- `.git/` 目录
 
-### PostToolUse Hooks
+### PostToolUse 钩子
 
-**Auto-formatting** - After file edits:
-- Runs Prettier on `.ts`, `.tsx`, `.js`, `.jsx` files (only when `node_modules/.bin/prettier` exists)
+**自动格式化** - 文件编辑后：
+- 对 `.ts`、`.tsx`、`.js`、`.jsx` 文件运行 Prettier（仅当 `node_modules/.bin/prettier` 存在时）
 
-### Stop Hooks
+### Stop 钩子
 
-**Git Status** - When Claude finishes:
-- Runs `git status --porcelain` and prints modified files
-- Reminds you to review changes before committing
-- Shows "No uncommitted changes" if the working tree is clean
+**Git 状态** - Claude 结束时：
+- 运行 `git status --porcelain` 并打印修改的文件
+- 提醒你在提交前检查变更
+- 如果工作区干净则显示"没有未提交的更改"
 
-## Hook Configuration
+## 钩子配置
 
-Hooks are defined in `.claude/hooks/hooks.json`. To customize:
+钩子定义在 `.claude/hooks/hooks.json` 中。自定义方式：
 
 ```json
 {
@@ -183,22 +183,22 @@ Hooks are defined in `.claude/hooks/hooks.json`. To customize:
 }
 ```
 
-### Disable Hooks
+### 禁用钩子
 
-To disable all hooks temporarily:
+临时禁用所有钩子：
 ```bash
 claude --no-hooks
 ```
 
-To disable specific hooks, edit `hooks.json` and remove the hook entry.
+要禁用特定钩子，编辑 `hooks.json` 并删除钩子条目。
 
-## Directory Structure
+## 目录结构
 
 ```
 .claude/
-├── README.md              # This file
+├── README.md              # 本文件
 ├── hooks/
-│   └── hooks.json         # Auto-hooks configuration
+│   └── hooks.json         # 自动钩子配置
 └── skills/
     ├── vibe-research/
     │   └── SKILL.md
@@ -214,77 +214,77 @@ To disable specific hooks, edit `hooks.json` and remove the hook entry.
         └── SKILL.md
 ```
 
-## Customizing Skills
+## 自定义技能
 
-Skills are Markdown files with YAML frontmatter. To modify a skill:
+技能是带有 YAML 前置元数据的 Markdown 文件。修改技能：
 
-1. Open the skill's `SKILL.md` file
-2. Edit the frontmatter (name, description, tools)
-3. Edit the instructions below the frontmatter
-4. Changes take effect immediately
+1. 打开技能的 `SKILL.md` 文件
+2. 编辑前置元数据（名称、描述、工具）
+3. 编辑前置元数据下方的说明
+4. 更改会立即生效
 
-### Skill Frontmatter Options
+### 技能前置元数据选项
 
 ```yaml
 ---
 name: skill-name
-description: When to use this skill
-allowed-tools: Read, Write, Bash  # Restrict available tools
-model: sonnet  # Optional: sonnet, opus, haiku
+description: 何时使用此技能
+allowed-tools: Read, Write, Bash  # 限制可用工具
+model: sonnet  # 可选：sonnet、opus、haiku
 ---
 ```
 
-## Troubleshooting
+## 故障排除
 
-### Session continuity first
+### 首先要确保会话连续性
 
-If your build starts drifting, avoid opening a fresh empty chat. Re-anchor with:
+如果你的构建开始偏离方向，避免打开新的空白聊天。用以下方式重新锚定：
 
-1. `AGENTS.md` current phase
-2. Last completed task
-3. One short summary of pending tasks
+1. `AGENTS.md` 当前阶段
+2. 最后完成的任务
+3. 待处理任务的简短摘要
 
-### Skills not appearing
+### 技能不显示
 
-1. Check you're in the project directory
-2. Run `claude --debug` to see loading errors
-3. Verify SKILL.md files have valid YAML frontmatter
+1. 检查你位于项目目录中
+2. 运行 `claude --debug` 查看加载错误
+3. 验证 SKILL.md 文件有有效的 YAML 前置元数据
 
-### Hooks not running
+### 钩子不运行
 
-1. Check `.claude/hooks/hooks.json` exists
-2. Verify JSON syntax is valid
-3. Check hook scripts are executable
+1. 检查 `.claude/hooks/hooks.json` 存在
+2. 验证 JSON 语法有效
+3. 检查钩子脚本可执行
 
-### Skill not triggering
+### 技能不触发
 
-The skill's `description` determines when it triggers. Include keywords users would naturally say:
-- Good: "Use when user says 'create PRD' or 'define product requirements'"
-- Bad: "PRD generation utility"
+技能的 `description` 决定了何时触发。包含用户自然会说出的关键词：
+- 正确："当用户说'创建 PRD'或'定义产品需求'时使用"
+- 错误："PRD 生成工具"
 
-### Plugin/rules troubleshooting
+### 插件/规则故障排除
 
-If using plugin-enabled IDE workflows:
+如果使用启用插件的 IDE 工作流程：
 
-1. Confirm plugin/rules package is loaded
-2. Confirm required tools are enabled
-3. Retry with explicit instruction: "Read AGENTS.md first, then proceed"
+1. 确认插件/规则包已加载
+2. 确认所需工具已启用
+3. 使用明确指令重试："先读取 AGENTS.md，然后再继续"
 
-### Model naming guidance
+### 模型命名指导
 
-Prefer model family names in docs and examples (Claude Sonnet, Claude Opus, Gemini Pro, Gemini Flash) to reduce churn from provider version rotations.
+在文档和示例中优先使用模型系列名称（Claude Sonnet、Claude Opus、Gemini Pro、Gemini Flash），以减少因提供商版本更新带来的变动。
 
-## Contributing
+## 贡献
 
-To add a new skill:
+添加新技能：
 
-1. Create directory: `.claude/skills/your-skill/`
-2. Add `SKILL.md` with frontmatter and instructions
-3. Test with `/your-skill`
-4. Submit PR
+1. 创建目录：`.claude/skills/your-skill/`
+2. 添加带有前置元数据和说明的 `SKILL.md`
+3. 用 `/your-skill` 测试
+4. 提交 PR
 
-## Resources
+## 资源
 
-- [Claude Code Skills Documentation](https://docs.anthropic.com/en/docs/claude-code/skills)
-- [Claude Code Hooks Documentation](https://docs.anthropic.com/en/docs/claude-code/hooks)
-- [Vibe-Coding Workflow Guide](../README.md)
+- [Claude Code 技能文档](https://docs.anthropic.com/en/docs/claude-code/skills)
+- [Claude Code 钩子文档](https://docs.anthropic.com/en/docs/claude-code/hooks)
+- [Vibe-Coding 工作流程指南](../README.md)

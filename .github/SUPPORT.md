@@ -1,36 +1,36 @@
-# Support
+# 支持
 
-This page explains how to get help and where to report different types of problems.
+本页面说明如何获取帮助以及在哪里报告不同类型的问题。
 
-## Where to ask what
+## 在哪里提问
 
-- **How-to questions and workflow advice:**
-  Use [GitHub Discussions](https://github.com/KhazP/vibe-coding-prompt-template/discussions)
-- **Bugs, broken links, and template defects:**
-  Open an issue on [GitHub Issues](https://github.com/KhazP/vibe-coding-prompt-template/issues)
-- **Security vulnerabilities:**
-  Use private reporting via [Security Advisories](https://github.com/KhazP/vibe-coding-prompt-template/security/advisories/new)
+- **使用指南和工作流程咨询：**
+  使用 [GitHub Discussions](https://github.com/KhazP/vibe-coding-prompt-template/discussions)
+- **Bug、链接失效和模板缺陷：**
+  在 [GitHub Issues](https://github.com/KhazP/vibe-coding-prompt-template/issues) 上提交 issue
+- **安全漏洞：**
+  使用 [Security Advisories](https://github.com/KhazP/vibe-coding-prompt-template/security/advisories/new) 私密报告
 
-## Before opening an issue
+## 提交 issue 前
 
-1. Check [README.md](../README.md) and [FAQ.md](FAQ.md)
-2. Search existing issues/discussions
-3. Use the relevant issue template
+1. 查看 [README.md](../README.md) 和 [FAQ.md](FAQ.md)
+2. 搜索现有的 issues/discussions
+3. 使用相关的 issue 模板
 
-## Response expectations
+## 响应预期
 
-- This is a community-maintained open source project
-- Support is best-effort and asynchronous
-- Clear reproduction details improve response time
+- 这是一个社区维护的开源项目
+- 支持是尽力而为的异步响应
+- 清晰的重现步骤可以缩短响应时间
 
-## How to make support requests actionable
+## 如何使支持请求更有效
 
-Include:
-- What you tried
-- Which file/step failed
-- Tool/IDE/model family context
-- Expected vs actual behavior
+请包含：
+- 你尝试过的方法
+- 哪个文件/步骤出现问题
+- 工具/IDE/模型系列背景
+- 预期行为与实际行为
 
-## Supporting the project
+## 支持项目
 
-If this project helps you, you can support it via [FUNDING.yml](FUNDING.yml) or by contributing docs, examples, and fixes.
+如果这个项目对你有帮助，你可以通过 [FUNDING.yml](FUNDING.yml) 支持我们，或者贡献文档、示例和修复。

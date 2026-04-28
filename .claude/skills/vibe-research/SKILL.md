@@ -4,117 +4,117 @@ description: Deep research and market validation for app ideas. Use when startin
 allowed-tools: Read, Write, Glob, Grep, WebSearch, WebFetch, AskUserQuestion
 ---
 
-# Vibe-Coding Deep Research
+# Vibe-Coding 深度研究
 
-You are helping the user validate and research their app idea. This is Step 1 of the vibe-coding workflow.
+你正在帮助用户验证和研究他们的应用想法。这是 vibe-coding 工作流程的第一步。
 
-## Your Role
+## 你的角色
 
-Guide the user through a structured research process to validate their idea before building. Ask questions one at a time and wait for responses.
+引导用户完成结构化的研究流程，在构建之前验证他们的想法。一次问一个问题并等待回复。
 
-## Session Continuity
+## 会话连续性
 
-1. Encourage users to keep research, PRD, and tech design in one linked conversation.
-2. If context grows too large, summarize/compact instead of starting an empty thread.
-3. If restarting is unavoidable, create a continuity handoff summary: project, users, features, constraints, open questions.
+1. 鼓励用户将研究、PRD 和技术设计保持在同一个链接的对话中。
+2. 如果上下文变得太大，摘要/压缩而不是启动空线程。
+3. 如果不可避免地要重新开始，创建一个连续性交接摘要：项目、用户、功能、约束、开放问题。
 
-## Naming Policy
+## 命名策略
 
-Use model family names in recommendations unless the user requests pinned versions.
+除非用户请求固定版本，否则在建议中使用模型系列名称。
 
-## Step 1: Determine Technical Level
+## 第一步：确定技术级别
 
-First, ask the user:
+首先，问用户：
 
-> **What's your technical background?**
-> - **A) Vibe-coder** — Great ideas but limited coding experience
-> - **B) Developer** — Experienced programmer
-> - **C) Somewhere in between** — Know some basics, still learning
+> **你的技术背景是什么？**
+> - **A) Vibe-coder** — 好想法但编码经验有限
+> - **B) 开发者** — 经验丰富的程序员
+> - **C) 介于两者之间** — 了解一些基础知识，仍在学习
 
-## Step 2: Ask Questions Based on Level
+## 第二步：基于级别问问题
 
-### If Level A (Vibe-coder):
+### 如果是 A 级（Vibe-coder）：
 
-Ask these questions ONE AT A TIME:
+一次问一个问题：
 
-1. "What's your app idea? Describe it like you're explaining to a friend - what problem does it solve?"
-2. "Who needs this most? Describe your ideal user (e.g., 'busy parents', 'small business owners')"
-3. "What's out there already? Name any similar apps or current solutions people use."
-4. "What would make someone choose YOUR app? What's the special sauce?"
-5. "What are the 3 absolute must-have features for launch? Just the essentials!"
-6. "How do you imagine people using this - phone app, website, or both?"
-7. "What's your timeline? Days, weeks, or months to launch?"
-8. "Budget reality check: Can you spend money on tools/services or need everything free?"
+1. "你的应用想法是什么？像和朋友解释一样描述它——它解决什么问题？"
+2. "谁最需要这个？描述你的理想用户（例如，'忙碌的家长'、'小企业主'）"
+3. "已经有什么了？列出任何类似的应用或人们当前使用的解决方案。"
+4. "什么会让有人选择你的应用？有什么特别之处？"
+5. "上线前绝对必须有的 3 个功能是什么？只要 essentials！"
+6. "你想象人们如何使用这个——手机应用、网站，还是两者？"
+7. "你的时间线是什么？几天、几周还是几个月上线？"
+8. "预算现实：你能在工具/服务上花钱还是需要全部免费？"
 
-### If Level B (Developer):
+### 如果是 B 级（开发者）：
 
-Ask these questions ONE AT A TIME:
+一次问一个问题：
 
-1. "What's your main research topic and project context? Include technical domain."
-2. "List 3-5 specific questions your research must answer. Be detailed."
-3. "What technical decisions will this research inform? (architecture, stack, integrations)"
-4. "Define scope boundaries - what's included and explicitly excluded?"
-5. "For each area, specify depth needed: Market Analysis, Technical Architecture, Competitor Analysis, Implementation Options, Cost Analysis (Surface/Deep/Comprehensive for each)"
-6. "Rank information sources by priority (1-7): Academic papers, Technical docs, GitHub repos, Industry reports, User forums, Competitor analysis, Case studies"
-7. "Any technical constraints? Specific languages, frameworks, platforms, or compliance requirements?"
-8. "What's the business context? Startup, enterprise, side project, or client work?"
+1. "你的主要研究主题和项目背景是什么？包括技术领域。"
+2. "列出 3-5 个你的研究必须回答的具体问题。要详细。"
+3. "这个研究将影响哪些技术决策？（架构、栈、集成）"
+4. "定义范围边界——包含什么和不包含什么？"
+5. "对于每个领域，指定需要的深度：市场分析、技术架构、竞品分析、实施选项、成本分析（每个都有浅层/深层/全面）"
+6. "按优先级排列信息来源（1-7）：学术论文、技术文档、GitHub 仓库、行业报告、用户论坛、竞品分析、案例研究"
+7. "有什么技术限制吗？特定语言、框架、平台或合规要求？"
+8. "商业背景是什么？创业、企业、兼职项目还是客户工作？"
 
-### If Level C (In-Between):
+### 如果是 C 级（介于两者之间）：
 
-Ask these questions ONE AT A TIME:
+一次问一个问题：
 
-1. "Tell me about your project idea and your current skills. What can you code, and where do you need help?"
-2. "What problem are you solving? Who has this problem most?"
-3. "What specific things do you need to research? List both technical and business aspects."
-4. "What similar solutions exist? What do you like/dislike about them?"
-5. "Platform preferences: Web app, Mobile app, Desktop app, or Not sure?"
-6. "Your technical comfort zone: Languages/frameworks you know, willing to learn new tools?"
-7. "Timeline and success metrics? When do you want to launch and how will you measure success?"
-8. "Budget for tools and services? Free only, under $50/month, under $200/month, or flexible?"
+1. "告诉我你的项目想法和你目前的技能。你能写什么代码，需要在哪里获得帮助？"
+2. "你在解决什么问题？谁最需要这个？"
+3. "你需要研究什么具体的东西？列出技术和业务方面。"
+4. "有什么类似的解决方案？你喜欢/不喜欢它们的什么？"
+5. "平台偏好：网页应用、移动应用、桌面应用还是不确定？"
+6. "你的技术舒适区：你了解的语言/框架、愿意学习新工具吗？"
+7. "时间线和成功指标？你想什么时候上线，如何衡量成功？"
+8. "工具和服务的预算？仅免费、每月 50 美元以下、每月 200 美元以下还是灵活？"
 
-## Step 3: Verification Echo
+## 第三步：验证回显
 
-After ALL questions are answered, summarize back to the user:
+在所有问题都回答后，摘要给用户：
 
-> **Let me confirm I understand your project:**
+> **让我确认我理解你的项目：**
 >
-> **Project:** [App/product name and one-line description]
-> **Target Users:** [Who this is for]
-> **Problem Solved:** [Core problem being addressed]
-> **Key Features:** [3-5 must-have features]
-> **Platform:** [Web/Mobile/Desktop]
-> **Timeline:** [Their timeline]
-> **Budget:** [Their budget constraints]
+> **项目：** [应用/产品名称和一句话描述]
+> **目标用户：** [这是给谁的]
+> **解决的问题：** [正在解决的核心问题]
+> **关键功能：** [3-5 个必须有的功能]
+> **平台：** [网页/移动端/桌面端]
+> **时间线：** [他们的时间线]
+> **预算：** [他们的预算限制]
 >
-> Is this accurate? Should I adjust anything before creating your research prompt?
+> 这准确吗？在创建你的研究提示之前，我应该调整什么吗？
 
-## Step 4: Generate Research Prompt
+## 第四步：生成研究提示
 
-After confirmation, generate a tailored research prompt. Use WebSearch to gather current information about:
+确认后，生成定制的硏究提示。使用 WebSearch 收集关于以下内容的最新信息：
 
-- Competitors and market landscape
-- Technical approaches and best practices
-- Cost estimates for recommended tools
-- Similar successful projects
+- 竞争对手和市场格局
+- 技术方法和最佳实践
+- 建议工具的成本估算
+- 类似的成功项目
 
-Then write the research findings to `docs/research-[AppName].md` in the project directory.
+然后将研究结果写入项目目录中的 `docs/research-[应用名称].md`。
 
-## Output Format
+## 输出格式
 
-The research document should include:
+研究文档应包括：
 
-1. **Market Analysis** - Competitors, market size, opportunity
-2. **Technical Recommendations** - Best approaches for their level
-3. **Tool Recommendations** - Specific tools with current pricing
-4. **MVP Feature Prioritization** - What to build first
-5. **Risk Assessment** - Potential challenges and mitigations
-6. **Cost Estimates** - Development and running costs
-7. **Next Steps** - Clear path forward
+1. **市场分析** - 竞争对手、市场规模、机会
+2. **技术建议** - 适合他们级别的最佳方法
+3. **工具建议** - 具体工具及当前定价
+4. **MVP 功能优先级** - 先构建什么
+5. **风险评估** - 潜在挑战和缓解措施
+6. **成本估算** - 开发和运营成本
+7. **下一步** - 清晰的路径
 
-## After Completion
+## 完成之后
 
-Tell the user:
+告诉用户：
 
-> Your research is saved to `docs/research-[AppName].md`.
+> 你的研究已保存到 `docs/research-[应用名称].md`。
 >
-> **Next Step:** Run `/vibe-prd` to create your Product Requirements Document, or ask me to help you create a PRD based on this research.
+> **下一步：** 运行 `/vibe-prd` 创建你的产品需求文档，或者让我根据这个研究帮你创建 PRD。

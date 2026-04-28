@@ -1,74 +1,74 @@
-# Contributing to Vibe-Coding Prompt Template
+# 为 Vibe-Coding Prompt Template 做贡献
 
-Thanks for your interest in improving the Vibe-Coding workflow! 🙌  
-Pull requests and issue reports are welcome.
+感谢你对改进 Vibe-Coding 工作流程的兴趣！🙌  
+欢迎提交 pull requests 和 issue 报告。
 
-This repository focuses on a reusable workflow for taking an idea from research to shipped MVP, not on hosting a single application codebase.
+本仓库专注于提供可重用的工作流程，用于将想法从研究到发布 MVP，而不是托管单个应用程序代码库。
 
-## Before you start
+## 开始之前
 
-- Read the README to understand the goals of this project and its scope.
-- Review the Code of Conduct (CODE_OF_CONDUCT.md). By participating, you agree to follow it.
+- 阅读 README 以了解本项目的目标及其范围。
+- 查看行为准则（CODE_OF_CONDUCT.md）。参与即表示你同意遵守该准则。
 
-## How to propose changes
+## 如何提出变更
 
-### Bug reports / issues
+### Bug 报告 / issues
 
-- Use GitHub Issues.
-- Include:
-  - What you were trying to do.
-  - The exact section/file (e.g. `part2-prd-mvp.md`, `AGENTS.md`).
-  - What went wrong or was unclear.
-  - If relevant, which AI tool / IDE you used (Cursor, Claude Code, Gemini CLI, etc.).
+- 使用 GitHub Issues。
+- 请包含：
+  - 你尝试做什么。
+  - 确切的部分/文件（例如 `part2-prd-mvp.md`、`AGENTS.md`）。
+  - 什么问题出错了或不清晰。
+  - 如果相关，说明你使用的 AI 工具 / IDE（Cursor、Claude Code、Gemini CLI 等）。
 
-### Suggesting improvements
+### 建议改进
 
-Good candidates for contributions:
+适合贡献的内容：
 
-- Clarifying confusing wording in prompts or docs.
-- Updating examples for newer AI tools or model versions.
-- Adding missing steps or checks to the workflow.
-- Sharing a live product or case study built with this workflow.
-- Adding better onboarding notes for beginners using AI IDEs for the first time.
-- Fixing typos, formatting, or broken links.
+- 澄清提示或文档中令人困惑的措辞。
+- 为更新的 AI 工具或模型版本更新示例。
+- 为工作流程添加缺失的步骤或检查。
+- 分享使用此工作流程构建的实时产品或案例研究。
+- 为首次使用 AI IDE 的初学者添加更好的入门说明。
+- 修复拼写错误、格式或失效链接。
 
-Out of scope (will usually be closed):
+超出范围（通常将被关闭）：
 
-- Project-specific prompts tightly coupled to a single private stack.
-- Vendor marketing or non-neutral comparisons.
+- 紧密耦合到单个私有技术栈的项目特定提示。
+- 供应商营销或非中立比较。
 
-Open an issue first for any **large** change so we can agree on direction.
+对于任何**大型**变更，先开一个 issue 以便我们就方向达成一致。
 
-## Community-friendly contributions
+## 社区友好的贡献
 
-Useful non-code contributions are welcome too:
+也欢迎有用的非代码贡献：
 
-- Share what you built with the workflow and what parts helped or failed.
-- Suggest clearer wording for first-time builders who are not yet comfortable with AI IDEs.
-- Propose tool-specific guidance for Cursor, Claude Code, GitHub Copilot, Gemini CLI, or similar tools.
-- Submit link fixes, screenshots, or example outputs that make the workflow easier to trust.
+- 分享你使用工作流程构建了什么，哪些部分有帮助或失败了。
+- 为尚未熟悉 AI IDE 的初次构建者建议更清晰的措辞。
+- 为 Cursor、Claude Code、GitHub Copilot、Gemini CLI 或类似工具提出特定工具指导。
+- 提交链接修复、截图或示例输出，使工作流程更容易信任。
 
-## Pull request guidelines
+## Pull request 指南
 
-- Fork the repo and create a feature branch.
-- Keep PRs focused and small where possible.
-- Update any relevant docs (README, partX files, AGENTS.md comments, etc.).
-- Add a short description explaining:
-  - What changed.
-  - Why it helps users of the workflow.
-  - Any breaking changes to existing instructions.
-- If your change adds a new example or showcase item, include the public URL and a one-line explanation of what was built.
+- Fork 仓库并创建功能分支。
+- 尽可能保持 PR 聚焦且小巧。
+- 更新相关文档（README、partX 文件、AGENTS.md 注释等）。
+- 添加简短描述说明：
+  - 什么改变了。
+  - 为什么它对工作流程用户有帮助。
+  - 对现有说明的任何破坏性变更。
+- 如果你的变更添加了新的示例或展示项目，请包含公开 URL 和一行关于构建内容的说明。
 
-Maintainers may ask for tweaks before merging.
+维护者可能会在合并前要求调整。
 
-## Style and formatting
+## 风格和格式
 
-- Use clear, concise English.
-- Prefer actionable, step-by-step instructions for contributors using AI tools.
-- Follow the existing heading hierarchy and Markdown style in the repo.
-- When mentioning tools (Claude, Gemini, Cursor, etc.), use their current names and link to their official docs when adding new references.
+- 使用清晰、简洁的英文。
+- 为使用 AI 工具的贡献者提供可操作的、分步骤的说明。
+- 遵循仓库中现有的标题层级和 Markdown 风格。
+- 提及工具（Claude、Gemini、Cursor 等）时，使用它们的当前名称，并在添加新引用时链接到它们的官方文档。
 
-## Code of Conduct
+## 行为准则
 
-This project follows the Contributor Covenant Code of Conduct (see `CODE_OF_CONDUCT.md`).  
-Report unacceptable behavior to the contact address listed there.
+本项目遵循贡献者公约行为准则（见 `CODE_OF_CONDUCT.md`）。  
+向其中列出的联系地址报告不可接受的行为。

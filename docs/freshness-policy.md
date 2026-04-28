@@ -1,45 +1,45 @@
-# Freshness Policy
+# 新鲜度策略
 
-This document defines how time-sensitive content in the repository is maintained.
+本文档定义了如何维护仓库中与时间敏感相关的内容。
 
-## Update cadence
+## 更新频率
 
-This repository is reviewed **monthly**. The README references this cadence in the "Monthly update cadence" section.
+此仓库每月审查**一次**。README 在"每月更新频率"部分引用了此频率。
 
-## What counts as time-sensitive
+## 哪些属于时间敏感内容
 
-| Category | Examples | Verification method |
+| 类别 | 示例 | 验证方法 |
 |----------|----------|---------------------|
-| Pricing claims | Dollar amounts for hosting, databases, AI tools | Check vendor pricing page directly |
-| Model names | Specific model versions (e.g., GPT-4o, Claude 3.5) | Check provider documentation |
-| CI action versions | `actions/checkout@vN` | Check github.com/actions/checkout/releases |
-| Tool capabilities | "Cursor supports X", "Copilot can do Y" | Check tool changelog or release notes |
-| Library recommendations | Specific npm packages, framework versions | Check npm/GitHub for deprecation notices |
+| 价格声明 | 托管、数据库、AI 工具的美元金额 | 直接检查供应商定价页面 |
+| 模型名称 | 特定模型版本（如 GPT-4o、Claude 3.5） | 检查提供商文档 |
+| CI action 版本 | `actions/checkout@vN` | 检查 github.com/actions/checkout/releases |
+| 工具能力 | "Cursor 支持 X"、"Copilot 可以做 Y" | 检查工具更新日志或发布说明 |
+| 库推荐 | 特定的 npm 包、框架版本 | 检查 npm/GitHub 上的弃用通知 |
 
-## Rules for contributors
+## 贡献者规则
 
-1. **Never hardcode dollar amounts** in prompt files or templates. Use "verify current pricing at [vendor URL]" instead.
-2. **Use model family names** (Claude Sonnet, Gemini Pro) instead of pinned versions unless a specific version is required.
-3. **Pin CI action versions** to the current maintained major (check releases page before submitting).
-4. **Add a "last verified" date** to any claim about external tools, services, or pricing. Format: `Last verified: YYYY-MM`.
-5. **Do not claim future dates.** Only reference releases and features that have already shipped.
+1. **永远不要在提示词文件或模板中硬编码美元金额**。改用"在 [供应商 URL] 验证当前定价"。
+2. **使用模型系列名称**（Claude Sonnet、 Gemini Pro）而非固定版本，除非确实需要特定版本。
+3. **将 CI action 版本固定到当前维护的主要版本**（提交前检查发布页面）。
+4. **在任何关于外部工具、服务或定价的声明中添加"上次验证"日期**。格式：`上次验证：YYYY-MM`。
+5. **不要声明未来日期**。只引用已经发布的功能和版本。
 
-## Automated checks
+## 自动化检查
 
-The `.github/workflows/repo-lint.yml` workflow catches common freshness violations:
+`.github/workflows/repo-lint.yml` 工作流会捕获常见的新鲜度违规：
 
-- Hardcoded `$N/mo` pricing in prompt/template files
-- Outdated `actions/checkout` versions
-- Unresolved placeholder contacts (e.g., `[your-email]`)
-- Stale skill references
+- 提示词/模板文件中硬编码的 `$N/月` 定价
+- 过时的 `actions/checkout` 版本
+- 未解决的占位符联系人（如 `[your-email]`）
+- 过时的技能引用
 
-## Monthly review checklist
+## 每月审查检查清单
 
-When performing the monthly review:
+执行每月审查时：
 
-- [ ] Check all vendor pricing references are still accurate
-- [ ] Check CI action versions against latest releases
-- [ ] Check model family names still reflect current offerings
-- [ ] Check tool capability claims against recent changelogs
-- [ ] Update "last verified" dates on any refreshed claims
-- [ ] Run the repo-lint workflow locally to catch regressions
+- [ ] 检查所有供应商定价引用是否仍然准确
+- [ ] 对照最新版本检查 CI action 版本
+- [ ] 检查模型系列名称是否仍然反映当前的产品
+- [ ] 对照最近的更新日志检查工具能力声明
+- [ ] 更新任何刷新声明的"上次验证"日期
+- [ ] 本地运行 repo-lint 工作流以捕获回归

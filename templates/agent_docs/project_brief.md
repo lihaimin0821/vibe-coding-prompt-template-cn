@@ -1,12 +1,12 @@
-# Project Brief
+# 项目简介
 
-- **Product vision:** [One-line summary from PRD]
-- **Target Audience:** [Who this is for]
+- **产品愿景：** [来自 PRD 的一行总结]
+- **目标受众：** [这是为谁设计的]
 
-## Conventions
-- **Naming:** [e.g., camelCase for files, PascalCase for React components]
-- **File Structure:** [e.g., Colocate tests with components: `Button.tsx` next to `Button.test.tsx`]
+## 约定
+- **命名：** [例如：文件使用 camelCase，React 组件使用 PascalCase]
+- **文件结构：** [例如：测试与组件同处：Button.tsx 旁边放 Button.test.tsx]
 
-## Key Principles
-- Ship the simplest possible solution that solves the user story.
-- If a simpler low-code integration exists (e.g. using pre-built Stripe Checkout instead of a custom form), use it.
+## 关键原则
+- 采用解决用户故事的最简单可行方案。
+- 如果存在更简单的低代码集成方式（例如使用预构建的 Stripe Checkout 而非自定义表单），请使用它。
